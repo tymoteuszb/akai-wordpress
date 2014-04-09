@@ -35,37 +35,72 @@ $logo-size: 250px
         text-align: right
         float: left
         padding-right: $logo-size / 2
-        +has-arrow(30px, $navigation-bar-height, $navigation-bar-height, right, $blue)
-        &:after
-          right: $logo-size / 2 - 30px
+        li
+          +has-arrow(30px, $navigation-bar-height, $navigation-bar-height, right, $blue)
+          a
+            +has-arrow(30px, $navigation-bar-height, $navigation-bar-height, right, $blue)
+            &:after
+              right: auto
+              left: 0
+
+          &.active
+            &:after
+              border-left-color: $orange
+            a:after
+              border-left-color: $blue
 
       &.right
         text-align: left
         float: right
         padding-left: $logo-size / 2
-        +has-arrow(30px, $navigation-bar-height, $navigation-bar-height, left, $blue)
-        &:after
-          left: $logo-size / 2 - 30px
+        li
+          +has-arrow(30px, $navigation-bar-height, $navigation-bar-height, left, $blue)
+          a
+            +has-arrow(30px, $navigation-bar-height, $navigation-bar-height, left, $blue)
+            &:after
+              left: auto
+              right: 0
+
+          &.active
+            &:after
+              border-right-color: $orange
+            a:after
+              border-right-color: $blue
 
       li
         display: inline-block
+        position: relative
+        &:after
+          z-index: 2
 
         a
           display: inline-block
-          margin: 0 3em
+          padding: 0 3.5em
+
+          &:hover
+            color: $orange
+
+        &.active
+          background-color: $orange
+          color: #fff
+          a:hover
+            color: inherit
 
   .logo
     $navigation-overall-size: $navigation-bar-height + 2 * $navigation-bar-margin
     $navigation-logo-margin: ($navigation-overall-size - $logo-size) / 2
 
-    display: inline-block
+    display: block
+    margin: 0 auto
     margin-top: -$navigation-bar-height -$navigation-bar-margin +$navigation-logo-margin
     position: relative
+    width: $logo-size
+    height: $logo-size
 
     img
       display: inline-block
-      width: $logo-size
-      height: $logo-size
+      width: 100%
+      height: 100%
       padding: 40px
 
   .site-title
@@ -85,6 +120,13 @@ $logo-size: 250px
   &:not(.big)
     .site-title, .social-buttons
       display: none
+
+    .logo
+      margin-top: -$navigation-bar-height + 5px
+      width: $navigation-bar-height - 10px
+      height: $navigation-bar-height - 10px
+      img
+        padding: 0
 
 .site-footer
   +bar

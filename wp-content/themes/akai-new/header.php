@@ -11,7 +11,7 @@
 
 <body <?php body_class(); ?>>
 
-  <header class="site-header big">
+  <header class="site-header">
     <div class="navigation-bar">
       <div class="container">
         <div class="navigation center">
@@ -19,7 +19,7 @@
         </div>
 
         <ul class="navigation left">
-          <li>
+          <li class="active">
             <a href="<?php echo esc_url( home_url( '/category/eventy' ) ); ?>">Wydarzenia</a>
           </li>
           <li>
