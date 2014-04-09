@@ -20,19 +20,19 @@
 
         <ul class="navigation left">
           <li>
-            <a href="#">Wydazrenia</a>
+            <a href="<?php echo esc_url( home_url( '/wydarzenia' ) ); ?>">Wydarzenia</a>
           </li>
           <li>
-            <a href="#">Wydazrenia</a>
+            <a href="<?php echo esc_url( home_url( '/o-nas' ) ); ?>">O nas</a>
           </li>
         </ul>
 
         <ul class="navigation right">
           <li>
-            <a href="#">Wydazrenia</a>
+            <a href="<?php echo esc_url( home_url( '/zespol' ) ); ?>">Zespół</a>
           </li>
           <li>
-            <a href="#">Wydazrenia</a>
+            <a href="<?php echo esc_url( home_url( '/wspolpraca' ) ); ?>">Współpraca</a>
           </li>
         </ul>
       </div>

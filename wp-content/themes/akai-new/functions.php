@@ -64,9 +64,8 @@ define( 'AKAI_VERSION', '0.1.0' );
  add_action( 'wp_head', 'akai_header_meta' );
 
 // Register AKAI additional post types.
-add_action('init', 'akai_post_types');
 function akai_post_types() {
- register_taxonomy('position', 'person', Array(
+ register_taxonomy('person_category', 'person', Array(
    'labels' => Array(
      'name' => 'Kategorie osób',
      'singular_name' => 'Kategoria osób'
@@ -84,7 +83,7 @@ function akai_post_types() {
     'public' => false,
     'show_ui' => true,
     'supports' => Array('title', 'thumbnail', 'page-attributes'),
-    'taxonomies' => Array('position')
+    'taxonomies' => Array('person_category')
   ));
   
   register_post_type('company', Array(
@@ -97,3 +96,4 @@ function akai_post_types() {
     'supports' => Array('title', 'thumbnail', 'page-attributes')
   ));
 }
+add_action('init', 'akai_post_types');
