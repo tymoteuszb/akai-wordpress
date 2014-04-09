@@ -1,0 +1,96 @@
+// site-header variables
+$bar-height: 70px
+
+$navigation-bar-height: $bar-height
+$navigation-bar-margin: 140px
+$logo-size: 230px
+
+.container
+  +outer-container
+
+.site-header
+  text-align: center
+
+  .navigation-bar
+    +bar
+
+    .navigation
+      position: relative
+      display: inline-block
+      width: 50%
+        
+      &.center
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        .fill
+          display: block
+          margin: 0 auto
+          width: $logo-size
+          height: $navigation-bar-height
+          background-color: #fff
+
+      &.left
+        text-align: right
+        float: left
+        padding-right: $logo-size
+        +has-arrow(30px, $navigation-bar-height, $navigation-bar-height, right, $blue)
+        &:after
+          right: $logo-size / 2 - 30px
+
+      &.right
+        text-align: left
+        float: right
+        padding-left: $logo-size
+        +has-arrow(30px, $navigation-bar-height, $navigation-bar-height, left, $blue)
+        &:after
+          left: $logo-size / 2 - 30px
+
+      li
+        display: inline-block
+
+        a
+          display: inline-block
+          padding: 0 1em
+
+  .logo
+    $navigation-overall-size: $navigation-bar-height + 2 * $navigation-bar-margin
+    $navigation-logo-margin: ($navigation-overall-size - $logo-size) / 2
+
+    display: inline-block
+    margin-top: -$navigation-bar-height -$navigation-bar-margin +$navigation-logo-margin
+    position: relative
+
+    img
+      display: inline-block
+      width: $logo-size
+      height: $logo-size
+      background-color: rgba(#ccc, 0.5)
+
+  .site-title
+    font-family: Polaris
+    font-size: 18px
+    color: $medium-gray
+    line-height: 60px
+    a
+      color: inherit
+
+  &.big
+    padding-top: $navigation-bar-margin
+    border-bottom: 4px solid $light-gray
+
+  &:not(.big)
+    .site-title, .social-buttons
+      display: none
+
+.site-footer
+  +bar
+
+  .copyright
+    +span-columns(6)
+
+  .partners
+    +span-columns(6)
+    text-align: right
+

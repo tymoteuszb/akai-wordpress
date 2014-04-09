@@ -31,6 +31,11 @@ define( 'AKAI_VERSION', '0.1.0' );
 	 * to change 'akai' to the name of your theme in all template files.
 	 */
 	load_theme_textdomain( 'akai', get_template_directory() . '/languages' );
+  
+  /**
+   * Enable support for Post Thumbnails
+   */
+  add_theme_support( 'post-thumbnails' );
  }
  add_action( 'after_setup_theme', 'akai_setup' );
  
@@ -57,3 +62,38 @@ define( 'AKAI_VERSION', '0.1.0' );
 	echo apply_filters( 'akai_humans', $humans );
  }
  add_action( 'wp_head', 'akai_header_meta' );
+
+// Register AKAI additional post types.
+add_action('init', 'akai_post_types');
+function akai_post_types() {
+ register_taxonomy('position', 'person', Array(
+   'labels' => Array(
+     'name' => 'Kategorie osób',
+     'singular_name' => 'Kategoria osób'
+   ),
+   'public' => false,
+   'show_ui' => true,
+   'hierarchical' => true
+ ));
+
+  register_post_type('person', Array(
+    'labels' => Array(
+      'name' => 'Osoby',
+      'singular_name' => 'Osoba'
+    ),
+    'public' => false,
+    'show_ui' => true,
+    'supports' => Array('title', 'thumbnail', 'page-attributes'),
+    'taxonomies' => Array('position')
+  ));
+  
+  register_post_type('company', Array(
+    'labels' => Array(
+      'name' => 'Firmy',
+      'singular_name' => 'Firma'
+    ),
+    'public' => false,
+    'show_ui' => true,
+    'supports' => Array('title', 'thumbnail', 'page-attributes')
+  ));
+}

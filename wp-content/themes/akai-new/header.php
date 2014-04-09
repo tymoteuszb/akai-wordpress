@@ -10,33 +10,52 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div>
-  <header class="site-header">
-    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+
+  <header class="site-header big">
+    <div class="navigation-bar">
+      <div class="container">
+        <div class="navigation center">
+          <i class="fill"></i>
+        </div>
+
+        <ul class="navigation left">
+          <li>
+            <a href="#">Wydazrenia</a>
+          </li>
+          <li>
+            <a href="#">Wydazrenia</a>
+          </li>
+        </ul>
+
+        <ul class="navigation right">
+          <li>
+            <a href="#">Wydazrenia</a>
+          </li>
+          <li>
+            <a href="#">Wydazrenia</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="logo">
       <img src="<?php bloginfo('template_directory'); ?>/images/logo.png" alt="AKAI">
     </a>
+
+    <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">Akademickie Koło Aplikacji Internetowych</a></h1>
+
+    <div class="social-buttons">
+      <a href="#">
+        <i class="akaicon akaicon-facebook"></i>
+      </a>
+      <a href="#">
+        <i class="akaicon akaicon-twitter"></i>
+      </a>
+      <a href="#">
+        <i class="akaicon akaicon-mail"></i>
+      </a>
+    </div>
   </header>
 
-  <header id="masthead" class="site-header" role="banner">
-    <div class="header-main">
-      <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-
-      <div class="search-toggle">
-        <a href="#search-container" class="screen-reader-text"><?php _e( 'Search', 'twentyfourteen' ); ?></a>
-      </div>
-
-      <nav id="primary-navigation" class="site-navigation primary-navigation" role="navigation">
-        <h1 class="menu-toggle"><?php _e( 'Primary Menu', 'twentyfourteen' ); ?></h1>
-        <a class="screen-reader-text skip-link" href="#content"><?php _e( 'Skip to content', 'twentyfourteen' ); ?></a>
-        <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
-      </nav>
-    </div>
-
-    <div id="search-container" class="search-box-wrapper hide">
-      <div class="search-box">
-        <?php get_search_form(); ?>
-      </div>
-    </div>
-  </header><!-- #masthead -->
-
   <div id="main" class="site-main">
+    <div class="container">

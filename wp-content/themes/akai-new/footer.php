@@ -10,18 +10,22 @@
  */
 ?>
 
-    </div><!-- #main -->
+    </div>
+  </div>
 
-    <footer id="colophon" class="site-footer" role="contentinfo">
+  <footer class="site-footer">
+    <div class="container">
+      <section class="copyright">
+        &copy; <a href="<?php echo esc_url( home_url( '/' ) ); ?>">AKAI</a> <?= "2010 - " . date("Y") ?>
+      </section>
 
-      <?php get_sidebar( 'footer' ); ?>
-
-      <div class="site-info">
-        <?php do_action( 'twentyfourteen_credits' ); ?>
-        <a href="<?php echo esc_url( __( 'http://wordpress.org/', 'twentyfourteen' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'twentyfourteen' ), 'WordPress' ); ?></a>
-      </div><!-- .site-info -->
-    </footer><!-- #colophon -->
-  </div><!-- #page -->
+      <section class="partners">
+        <a href="http://put.poznan.pl/" class="partner">
+          Poznań University of Technology
+        </a>
+      </section>
+    </div>
+  </footer>
 
   <?php wp_footer(); ?>
 </body>

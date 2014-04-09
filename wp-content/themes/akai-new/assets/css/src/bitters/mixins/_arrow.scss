@@ -1,0 +1,61 @@
+
+//============================================================
+// triangle arrow
+//
+// @param width           :  px, em
+// @param height          :  px, em
+// @param direction       :  up, down, left, right
+// @param color           :  hex, rgb
+// @author http://minimalmonkey.com/sass-triangle-mixin/
+//============================================================
+
+@mixin arrow($width: 20px, $height: 20px, $direction: up, $color: red) {
+  width: 0;
+  height: 0;
+  @if $direction == right {
+    border-top: $height/2 solid transparent;
+    border-bottom: $height/2 solid transparent;
+    border-left: $width solid $color;
+  }
+  @if $direction == left {
+    border-top: $height/2 solid transparent;
+    border-bottom: $height/2 solid transparent;
+    border-right: $width solid $color;
+  }
+  @if $direction == up {
+    border-left: $width/2 solid transparent;
+    border-right: $width/2 solid transparent;
+    border-bottom: $height solid $color;
+  }
+  @if $direction == down {
+    border-left: $width/2 solid transparent;
+    border-right: $width/2 solid transparent;
+    border-top: $height solid $color;
+  }
+}
+
+@mixin has-arrow($arrow-width: 20px, $arrow-height: 20px, $container-size: 50px, $direction: up, $color: red) {
+  &:after {
+    content: " ";
+    display: block;
+    position: absolute;
+    @include arrow($arrow-width, $arrow-height, $direction, $color);
+
+    @if $direction == right {
+      bottom: ($container-size - $arrow-height) / 2;
+      right: -$arrow-width;
+    }
+    @if $direction == left {
+      bottom: ($container-size - $arrow-height) / 2;
+      left: -$arrow-width;
+    }
+    @if $direction == up {
+      left: ($container-size - $arrow-width) / 2;
+      top: -$arrow-height;
+    }
+    @if $direction == down {
+      left: ($container-size - $arrow-width) / 2;
+      bottom: -$arrow-height;
+    }
+  }
+}

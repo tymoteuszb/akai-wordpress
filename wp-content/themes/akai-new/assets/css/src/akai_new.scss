@@ -6,4 +6,12 @@
  * Licensed under the GPLv2+ license.
  */
 
- @import "_normalize.scss";
+@import "normalize";
+
+// See http://bourbon.io/ for more info about those SASS mixin libraries
+@import "bourbon/bourbon";
+@import "bitters/bitters";
+@import "neat/neat";
+
+@import "mixins";
+@import "layout";

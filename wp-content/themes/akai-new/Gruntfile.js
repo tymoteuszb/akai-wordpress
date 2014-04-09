@@ -90,21 +90,19 @@ module.exports = function( grunt ) {
 			}
 		},
 		watch:  {
+      options: {
+        livereload: true,
+        debounceDelay: 100
+      },
 			
 			sass: {
-				files: ['assets/css/src/*.scss'],
-				tasks: ['sass', 'cssmin'],
-				options: {
-					debounceDelay: 500
-				}
+				files: ['assets/css/src/**/*.scss', 'assets/css/src/**/*.sass'],
+				tasks: ['sass', 'cssmin']
 			},
 			
 			scripts: {
 				files: ['assets/js/src/**/*.js', 'assets/js/vendor/**/*.js'],
-				tasks: ['jshint', 'concat', 'uglify'],
-				options: {
-					debounceDelay: 500
-				}
+				tasks: ['jshint', 'concat', 'uglify']
 			}
 		}
 	} );
