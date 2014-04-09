@@ -20,7 +20,7 @@
 
         <ul class="navigation left">
           <li>
-            <a href="<?php echo esc_url( home_url( '/wydarzenia' ) ); ?>">Wydarzenia</a>
+            <a href="<?php echo esc_url( home_url( '/category/eventy' ) ); ?>">Wydarzenia</a>
           </li>
           <li>
             <a href="<?php echo esc_url( home_url( '/o-nas' ) ); ?>">O nas</a>
@@ -39,7 +39,7 @@
     </div>
 
     <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="logo">
-      <img src="<?php bloginfo('template_directory'); ?>/images/logo.png" alt="AKAI">
+      <img src="<?php bloginfo('template_directory'); ?>/images/logo.svg" alt="AKAI">
     </a>
 
     <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">Akademickie Koło Aplikacji Internetowych</a></h1>

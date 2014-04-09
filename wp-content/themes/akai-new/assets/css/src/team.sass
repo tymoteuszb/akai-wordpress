@@ -1,0 +1,35 @@
+.team
+  > article
+    display: none
+
+  .people
+    margin: $gutter 0
+    overflow: hidden
+
+    h3
+      +clear-format
+      font-size: 44px
+      font-weight: 300
+      line-height: 1.5
+    
+    > article
+      +span-columns(3)
+      +omega(4n)
+
+      figure
+        margin: 0
+
+        > img
+          width: 100%
+          height: 225px
+
+      figcaption
+        text-align: center
+
+        .entry-title
+          +clear-format
+          font-weight: bold
+          font-size: 22px
+
+        .entry-position
+          font-size: 18px

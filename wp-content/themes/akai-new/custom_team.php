@@ -6,13 +6,13 @@
 get_header();
 ?>
 
-<?php while (have_posts()) : the_post(); ?>
+<section class="team">
+  <?php while (have_posts()) : the_post(); ?>
 
-	<?php get_template_part('content', 'page'); ?>
+  	<?php get_template_part('content', 'page'); ?>
 
-<?php endwhile; ?>
+  <?php endwhile; ?>
 
-<div class="team">
   <?php
   // Get list of person categories (they should be ordered automatically by "Category Order and Taxonomy Terms Order" plugin)
   $person_categories = get_categories(Array(
@@ -23,7 +23,7 @@ get_header();
 
   foreach ($person_categories as $person_category) { ?>
 
-  	<div class="team-person_category">
+  	<section class="people">
   		<h3><?php echo $person_category->cat_name; ?></h3>
 
   		<?php
@@ -38,9 +38,9 @@ get_header();
   			get_template_part('content', 'person');
   		}
   		?>
-  	</div>
+  	</section>
   	
   <?php } ?>
-</div>
+</section>
 
 <?php get_footer(); ?>

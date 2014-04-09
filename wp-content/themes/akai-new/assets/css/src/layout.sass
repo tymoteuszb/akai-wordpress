@@ -3,7 +3,7 @@ $bar-height: 70px
 
 $navigation-bar-height: $bar-height
 $navigation-bar-margin: 140px
-$logo-size: 230px
+$logo-size: 250px
 
 .container
   +outer-container
@@ -34,7 +34,7 @@ $logo-size: 230px
       &.left
         text-align: right
         float: left
-        padding-right: $logo-size
+        padding-right: $logo-size / 2
         +has-arrow(30px, $navigation-bar-height, $navigation-bar-height, right, $blue)
         &:after
           right: $logo-size / 2 - 30px
@@ -42,7 +42,7 @@ $logo-size: 230px
       &.right
         text-align: left
         float: right
-        padding-left: $logo-size
+        padding-left: $logo-size / 2
         +has-arrow(30px, $navigation-bar-height, $navigation-bar-height, left, $blue)
         &:after
           left: $logo-size / 2 - 30px
@@ -52,7 +52,7 @@ $logo-size: 230px
 
         a
           display: inline-block
-          padding: 0 1em
+          margin: 0 3em
 
   .logo
     $navigation-overall-size: $navigation-bar-height + 2 * $navigation-bar-margin
@@ -66,11 +66,13 @@ $logo-size: 230px
       display: inline-block
       width: $logo-size
       height: $logo-size
-      background-color: rgba(#ccc, 0.5)
+      padding: 40px
 
   .site-title
+    margin-top: -30px
     font-family: Polaris
     font-size: 18px
+    font-weight: normal
     color: $medium-gray
     line-height: 60px
     a

@@ -16,11 +16,11 @@ module.exports = function( grunt ) {
 					' * Licensed GPLv2+' +
 					' */\n'
 			},
-			akai_new: {
+			main: {
 				src: [
-					'assets/js/src/akai_new.js'
+					'assets/js/src/main.js'
 				],
-				dest: 'assets/js/akai_new.js'
+				dest: 'assets/js/main.js'
 			}
 		},
 		jshint: {
@@ -45,7 +45,7 @@ module.exports = function( grunt ) {
 		uglify: {
 			all: {
 				files: {
-					'assets/js/akai_new.min.js': ['assets/js/akai_new.js']
+					'assets/js/main.min.js': ['assets/js/main.js']
 				},
 				options: {
 					banner: '/*! <%= pkg.title %> - v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %>\n' +
@@ -66,7 +66,7 @@ module.exports = function( grunt ) {
 		sass:   {
 			all: {
 				files: {
-					'assets/css/akai_new.css': 'assets/css/src/akai_new.scss'
+					'assets/css/main.css': 'assets/css/src/main.scss'
 				}
 			}
 		},
@@ -83,7 +83,7 @@ module.exports = function( grunt ) {
 				expand: true,
 				
 				cwd: 'assets/css/',
-				src: ['akai_new.css'],
+				src: ['main.css'],
 				
 				dest: 'assets/css/',
 				ext: '.min.css'

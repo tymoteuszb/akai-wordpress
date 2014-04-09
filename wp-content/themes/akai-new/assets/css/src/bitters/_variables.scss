@@ -1,22 +1,22 @@
 // Typography
 ///////////////////////////////////////////////////////////////////////////////
-$sans-serif: $helvetica;
-$serif: $georgia;
+$sans-serif: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$serif: "Polaris", Georgia, Cambria, "Times New Roman", Times, serif;
 
 $base-font-family: $sans-serif;
 $header-font-family: $base-font-family;
 
 // Sizes
 ///////////////////////////////////////////////////////////////////////////////
-$base-font-size: 1em;
-$base-line-height: $base-font-size * 1.5;
+$base-font-size: 14px;
+$base-line-height: 1.5;
 $base-border-radius: em(3);
 
 // Colors
 ///////////////////////////////////////////////////////////////////////////////
 
 $blue: #00263d;
-$orange: ffa70c;
+$orange: #ffa70c;
 $dark-gray: #333;
 $medium-gray: #898989;
 $light-gray: #e8e8e8;

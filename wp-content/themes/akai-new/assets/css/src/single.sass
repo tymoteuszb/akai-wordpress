@@ -1,0 +1,27 @@
+article.single
+  > header
+    margin: $gutter 0
+
+    .entry-title
+      +clear-format
+      font-size: 44px
+      font-weight: 300
+      line-height: 1.5
+      color: $blue
+
+  > .entry-main
+    +span-columns(8)
+
+  > aside
+    +span-columns(4)
+
+  > .entry-main, > aside
+    > section
+      + section
+        &:before
+          content: " "
+          display: block
+          width: 100%
+          height: 1px
+          border-top: 1px solid $light-gray
+          margin: $gutter 0

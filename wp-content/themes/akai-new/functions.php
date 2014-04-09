@@ -14,6 +14,8 @@
  
  // Useful global constants
 define( 'AKAI_VERSION', '0.1.0' );
+
+include 'includes/helpers.php';
  
  /**
   * Set up theme defaults and register supported WordPress features.
@@ -47,9 +49,9 @@ define( 'AKAI_VERSION', '0.1.0' );
  function akai_scripts_styles() {
 	$postfix = ( defined( 'SCRIPT_DEBUG' ) && true === SCRIPT_DEBUG ) ? '' : '.min';
 
-	wp_enqueue_script( 'akai', get_template_directory_uri() . "/assets/js/akai_new{$postfix}.js", array(), AKAI_VERSION, true );
+	wp_enqueue_script( 'akai', get_template_directory_uri() . "/assets/js/main{$postfix}.js", array(), AKAI_VERSION, true );
 		
-	wp_enqueue_style( 'akai', get_template_directory_uri() . "/assets/css/akai_new{$postfix}.css", array(), AKAI_VERSION );
+	wp_enqueue_style( 'akai', get_template_directory_uri() . "/assets/css/main{$postfix}.css", array(), AKAI_VERSION );
  }
  add_action( 'wp_enqueue_scripts', 'akai_scripts_styles' );
  
@@ -97,3 +99,16 @@ function akai_post_types() {
   ));
 }
 add_action('init', 'akai_post_types');
+
+// Make the_excerpt() shorter.
+function akai_excerpt_length( $length ) {
+    return 18;
+}
+add_filter( 'excerpt_length', 'akai_excerpt_length' );
+
+// Change "[...]" ellipsis into "..."
+function akai_excerpt_more( $more ) {
+  return ' &hellip;';
+}
+add_filter('excerpt_more', 'akai_excerpt_more');
+

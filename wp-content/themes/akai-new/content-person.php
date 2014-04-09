@@ -1,18 +1,11 @@
-<?php
-/**
- * @package akai
- * @since akai 1.0
- */
-?>
-
-<div class="team-person person clearfix">
-  <div class="person-image">
+<article id="post-<?php the_ID(); ?>" <?php post_class('person'); ?>>
+  <figure>
     <?php the_post_thumbnail(); ?>
-  </div>
-  <div class="person-description">
-    <h4><?php the_title(); ?></h4>
-    <span class="person-position"><?php the_field('position'); ?></span>
-    <span class="person-email"><?php the_field('email'); ?></span>
-    <span class="person-phone"><?php the_field('phone'); ?></span>
-  </div>
-</div>
+    <figcaption>
+      <h4 class="entry-title"><?php the_title(); ?></h4>
+      <div class="entry-position"><?php the_field('position'); ?></div>
+      <div class="entry-email"><?php the_field('email'); ?></div>
+      <div class="entry-phone"><?php the_field('phone'); ?></div>
+    </figcaption>
+  </figure>
+</article>
