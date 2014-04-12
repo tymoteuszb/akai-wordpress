@@ -20,7 +20,7 @@ g clone akai-wordpress
 cd akai-wordpress
 
 bundle install
-wordmove pull -e staging # not necessary
+wordmove pull -e staging # not necessary. You need to have Movefile configured (not included in the git repo) if you want to do this!
 
 cp local-config.sample.php local-config.php
 vi local-config.php # configure database access
