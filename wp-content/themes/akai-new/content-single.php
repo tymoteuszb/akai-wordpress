@@ -1,52 +1,53 @@
-<?php
-/**
- * @package akai
- * @since akai 1.0
- */
-?>
-
-<?php
-$date = date_create( get_field('date') . ' ' . get_field('time') );
-?>
+<?php akai_the_horizontal_photo(); ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('single'); ?>>
   <header class="entry-header">
     <h1 class="entry-title"><?php the_title(); ?></h1>
   </header>
 
-  <section class="entry-main">
+  <section class="entry-main column content">
     <section class="entry-content">
       <?php the_content(); ?>
     </section>
 
-    <section class="entry-presentation">
-      <?php the_field('presentation'); ?>
-    </section>
+    <?php if (get_field('presentation')): ?>
+      <section class="entry-presentation">
+        <?php the_field('presentation'); ?>
+      </section>
+    <?php endif ?>
   </section>
 
-  <aside>
-    <section class="entry-thumbnail">
-      <?php the_post_thumbnail(); ?>
-    </section>
+  <aside class="column sidebar">
+    <?php if (!get_field('horizontal_photo')): ?>
+      <section class="entry-thumbnail">
+        <?php the_post_thumbnail(); ?>
+      </section>
+    <?php endif ?>
 
-    <section class="entry-datelocation">
-      <h4>Czas i miejsce</h4>
-      <?php the_time('d/m/y H:i'); ?>
+    <?php if (get_field('event_date')): ?>
+      <section class="entry-datelocation">
+        <h4>Czas</h4>
+        <?php echo ucfirst(date_i18n('l, j F Y, H:i', get_field('event_date'))); ?>
+      </section>
+    <?php endif ?>
 
-      <?php akai_add_to_calendar( @date_create( get_field('date') . get_field('time') )); ?>
-    </section>
+    <?php if ($location = get_field('location')): ?>
+      <section class="entry-datelocation">
+        <h4>Miejsce</h4>
+        <div class="acf-map">
+          <div class="marker" data-lat="<?php echo $location['lat']; ?>" data-lng="<?php echo $location['lng']; ?>"></div>
+        </div>
+      </section>
+    <?php endif ?>
 
-    <section class="entry-speaker">
-      <h4>Prelegent</h4>
-      <ul>
-        <li>Tomasz Jackowski</li>
-      </ul>
-    </section>
+    <?php akai_add_to_calendar( @date_create( get_field('date') . get_field('time') )); ?>
 
-    <section class="entry-registration">
-      <h4>Rejestracja</h4>
-      <?php the_field('registration'); ?>
-    </section>
+    <?php if (get_field('registration')): ?>
+      <section class="entry-registration">
+        <h4>Rejestracja</h4>
+        <?php the_field('registration'); ?>
+      </section>
+    <?php endif ?>
   
     <section class="entry-share">
       <h4>Udostępnij</h4>

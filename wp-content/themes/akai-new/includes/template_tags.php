@@ -20,3 +20,15 @@ function akai_add_to_calendar($date = false, $duration = 5400, $params = Array()
   
   echo ' lub <a href="'. home_url('/ical.ics') .'">Zapisz do swego kalendarza</a>';
 }
+
+/**
+ * Show horizontal photo, f.e. on page or post's page.
+ * @return void
+ */
+function akai_the_horizontal_photo()
+{
+  $horizontal_photo_url = get_field('horizontal_photo');
+  if ($horizontal_photo_url) {
+    printf('<div class="horizontal-photo" style="background-image:url(%s)"></div>', $horizontal_photo_url);
+  }
+}

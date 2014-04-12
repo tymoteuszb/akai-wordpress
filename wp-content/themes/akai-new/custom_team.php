@@ -7,11 +7,11 @@ get_header();
 ?>
 
 <section class="team">
-  <?php while (have_posts()) : the_post(); ?>
+  <?php /* while (have_posts()) : the_post(); ?>
 
   	<?php get_template_part('content', 'page'); ?>
 
-  <?php endwhile; ?>
+  <?php endwhile; */ ?>
 
   <?php
   // Get list of person categories (they should be ordered automatically by "Category Order and Taxonomy Terms Order" plugin)
@@ -25,19 +25,21 @@ get_header();
 
   	<section class="people">
   		<h3><?php echo $person_category->cat_name; ?></h3>
-
-  		<?php
-  		// Get all people on this person_category
-  		query_posts(Array(
-  			'person_category' => $person_category->slug,
-  			'posts_per_page' => -1,
-  			'post_type' => 'person'
-  		));
-  		while (have_posts()) {
-  			the_post();
-  			get_template_part('content', 'person');
-  		}
-  		?>
+      
+      <div class="people-list">
+        <?php
+        // Get all people on this person_category
+        query_posts(Array(
+          'person_category' => $person_category->slug,
+          'posts_per_page' => -1,
+          'post_type' => 'person'
+        ));
+        while (have_posts()) {
+          the_post();
+          get_template_part('content', 'person');
+        }
+        ?>
+      </div>
   	</section>
   	
   <?php } ?>

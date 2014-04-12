@@ -1,14 +1,15 @@
 $caption-height: 45px
 
 .events
-  margin-top: $gutter
-
   +row
+  
   > .post
     +span-columns(4)
     +omega(3n)
     position: relative
-    margin-bottom: $gutter
+
+    + .post
+      margin-bottom: $gutter
     
     figure
       margin: 0
@@ -19,7 +20,6 @@ $caption-height: 45px
       figcaption
         font-size: 14px
         color: #fff
-        display: none
         background-color: rgba($blue, 0.9)
         position: absolute
         top: 0
@@ -29,6 +29,8 @@ $caption-height: 45px
         padding: $gutter
         overflow: hidden
         line-height: 1.5
+        opacity: 0
+        transition: opacity .2s linear
 
         .entry-title
           +clear-format
@@ -59,4 +61,4 @@ $caption-height: 45px
 
     &:hover
       figcaption
-        display: block
+        opacity: 1

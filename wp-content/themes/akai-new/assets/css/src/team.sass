@@ -1,20 +1,19 @@
 .team
-  > article
-    display: none
-
   .people
-    margin: $gutter 0
     overflow: hidden
+    margin-bottom: $gutter
 
     h3
       +clear-format
       font-size: 44px
       font-weight: 300
-      line-height: 1.5
+      line-height: 1
+      margin-bottom: .2em
     
-    > article
+    .person
       +span-columns(3)
       +omega(4n)
+      margin-top: $gutter        
 
       figure
         margin: 0
@@ -25,6 +24,7 @@
 
       figcaption
         text-align: center
+        padding-top: .5em
 
         .entry-title
           +clear-format
@@ -33,3 +33,6 @@
 
         .entry-position
           font-size: 18px
+        
+        .entry-icons
+          font-size: 1.2em

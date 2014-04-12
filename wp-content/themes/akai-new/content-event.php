@@ -1,3 +1,4 @@
+<?php $time = get_field('event_date') ?: get_the_time('U'); ?>
 
 <a href="<?php esc_attr_e(get_permalink()); ?>" id="post-<?php the_ID(); ?>" <?php post_class('eventbox'); ?>>
   <figure>
@@ -11,6 +12,6 @@
 
   <div class="caption">
     <h2 class="entry-title"><?php the_title(); ?></h2>
-    <time datetime="<?php the_time('c'); ?>"><?php the_time('d/m/y'); ?></time>
+    <time datetime="<?php echo date_i18n('c', $time); ?>"><?php echo date_i18n('d/m/y', $time); ?></time>
   </div>
-</a><!-- #post-<?php the_ID(); ?> -->
+</a>

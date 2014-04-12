@@ -18,7 +18,7 @@ module.exports = function( grunt ) {
 			},
 			main: {
 				src: [
-					'assets/js/src/main.js'
+					'assets/js/src/**/*.js'
 				],
 				dest: 'assets/js/main.js'
 			}

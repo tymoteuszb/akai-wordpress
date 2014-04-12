@@ -1,22 +1,12 @@
 <?php
-/**
- * AKAI New functions and definitions
- *
- * When using a child theme (see http://codex.wordpress.org/Theme_Development and
- * http://codex.wordpress.org/Child_Themes), you can override certain functions
- * (those wrapped in a function_exists() call) by defining them first in your child theme's
- * functions.php file. The child theme's functions.php file is included before the parent
- * theme's file, so the child theme functions would be used.
- *
- * @package AKAI New
- * @since 0.1.0
- */
  
- // Useful global constants
+// Useful global constants
 define( 'AKAI_VERSION', '0.1.0' );
+define('SCRIPT_DEBUG', true);
 
-include 'includes/helpers.php';
+include 'includes/template_tags.php';
  
+
  /**
   * Set up theme defaults and register supported WordPress features.
   *
@@ -38,9 +28,19 @@ include 'includes/helpers.php';
    * Enable support for Post Thumbnails
    */
   add_theme_support( 'post-thumbnails' );
+
+  /**
+   * This theme uses wp_nav_menu() in one location.
+   */
+  register_nav_menus( array(
+    'primary_left' => "Menu główne - lewa strona",
+    'primary_right' => "Menu główne - prawa strona"
+  ) );
+
  }
  add_action( 'after_setup_theme', 'akai_setup' );
  
+
  /**
   * Enqueue scripts and styles for front-end.
   *
@@ -55,15 +55,6 @@ include 'includes/helpers.php';
  }
  add_action( 'wp_enqueue_scripts', 'akai_scripts_styles' );
  
- /**
-  * Add humans.txt to the <head> element.
-  */
- function akai_header_meta() {
-	$humans = '<link type="text/plain" rel="author" href="' . get_template_directory_uri() . '/humans.txt" />';
-	
-	echo apply_filters( 'akai_humans', $humans );
- }
- add_action( 'wp_head', 'akai_header_meta' );
 
 // Register AKAI additional post types.
 function akai_post_types() {
@@ -88,10 +79,10 @@ function akai_post_types() {
     'taxonomies' => Array('person_category')
   ));
   
-  register_post_type('company', Array(
+  register_post_type('partner', Array(
     'labels' => Array(
-      'name' => 'Firmy',
-      'singular_name' => 'Firma'
+      'name' => 'Partnerzy',
+      'singular_name' => 'Partner'
     ),
     'public' => false,
     'show_ui' => true,
@@ -100,11 +91,13 @@ function akai_post_types() {
 }
 add_action('init', 'akai_post_types');
 
+
 // Make the_excerpt() shorter.
 function akai_excerpt_length( $length ) {
-    return 18;
+    return 15;
 }
 add_filter( 'excerpt_length', 'akai_excerpt_length' );
+
 
 // Change "[...]" ellipsis into "..."
 function akai_excerpt_more( $more ) {
@@ -112,3 +105,22 @@ function akai_excerpt_more( $more ) {
 }
 add_filter('excerpt_more', 'akai_excerpt_more');
 
+
+// Used in primary navigation (wp_nav_menu() in header.php)
+class Akai_Walker_Nav_Menu extends Walker_Nav_Menu {
+  public function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
+
+    // If it's link to category "Events":
+    // - change the URL to the homepage
+    // - highlight as current, if we are on the homepage
+    if ($item->object == 'category' && strpos($item->url, 'eventy') !== -1) {
+      $item->url = home_url('/');
+
+      if (is_home()) {
+        $item->classes[] = 'current-menu-item';
+      }
+    }
+
+    return parent::start_el($output, $item, $depth, $args, $id);
+  }
+}

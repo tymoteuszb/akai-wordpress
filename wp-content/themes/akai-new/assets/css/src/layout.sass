@@ -1,9 +1,14 @@
 // site-header variables
 $bar-height: 70px
 
+$navigation-arrow-width: 30px
 $navigation-bar-height: $bar-height
 $navigation-bar-margin: 140px
 $logo-size: 250px
+
+
+// main layout stuff
+
 
 .container
   +outer-container
@@ -18,6 +23,26 @@ $logo-size: 250px
       position: relative
       display: inline-block
       width: 50%
+
+      li
+        display: inline-block
+        position: relative
+        &:after
+          z-index: 2
+
+        a
+          display: inline-block
+          width: 12.3em
+          text-align: center
+
+          &:hover
+            color: $orange
+
+        &.current-menu-item, &.current-post-ancestor
+          background-color: $orange
+          color: #fff
+          a:hover
+            color: inherit
         
       &.center
         position: absolute
@@ -36,14 +61,15 @@ $logo-size: 250px
         float: left
         padding-right: $logo-size / 2
         li
-          +has-arrow(30px, $navigation-bar-height, $navigation-bar-height, right, $blue)
+          +has-arrow($navigation-arrow-width, $navigation-bar-height, $navigation-bar-height, right, $blue)
           a
-            +has-arrow(30px, $navigation-bar-height, $navigation-bar-height, right, $blue)
+            +has-arrow($navigation-arrow-width, $navigation-bar-height, $navigation-bar-height, right, $blue)
+            padding-left: $navigation-arrow-width
             &:after
               right: auto
               left: 0
 
-          &.active
+          &.current-menu-item, &.current-post-ancestor
             &:after
               border-left-color: $orange
             a:after
@@ -54,37 +80,19 @@ $logo-size: 250px
         float: right
         padding-left: $logo-size / 2
         li
-          +has-arrow(30px, $navigation-bar-height, $navigation-bar-height, left, $blue)
+          +has-arrow($navigation-arrow-width, $navigation-bar-height, $navigation-bar-height, left, $blue)
           a
-            +has-arrow(30px, $navigation-bar-height, $navigation-bar-height, left, $blue)
+            +has-arrow($navigation-arrow-width, $navigation-bar-height, $navigation-bar-height, left, $blue)
+            padding-right: $navigation-arrow-width
             &:after
               left: auto
               right: 0
 
-          &.active
+          &.current-menu-item, &.current-post-ancestor
             &:after
               border-right-color: $orange
             a:after
               border-right-color: $blue
-
-      li
-        display: inline-block
-        position: relative
-        &:after
-          z-index: 2
-
-        a
-          display: inline-block
-          padding: 0 3.5em
-
-          &:hover
-            color: $orange
-
-        &.active
-          background-color: $orange
-          color: #fff
-          a:hover
-            color: inherit
 
   .logo
     $navigation-overall-size: $navigation-bar-height + 2 * $navigation-bar-margin
@@ -128,6 +136,9 @@ $logo-size: 250px
       img
         padding: 0
 
+.site-main
+  margin: 40px
+  
 .site-footer
   +bar
 
@@ -138,3 +149,31 @@ $logo-size: 250px
     +span-columns(6)
     text-align: right
 
+
+// Other layout stuff
+
+
+.horizontal-photo
+  background-size: cover
+  background-position: cover
+  height: 370px
+  margin-bottom: $gutter
+  border: 1px solid $light-gray
+
+
+.column
+  &.content
+    +span-columns(8)
+
+  &.sidebar
+    +span-columns(4)
+
+  > section
+    + section
+      &:before
+        content: " "
+        display: block
+        width: 100%
+        height: 1px
+        border-top: 1px solid $light-gray
+        margin: $gutter 0

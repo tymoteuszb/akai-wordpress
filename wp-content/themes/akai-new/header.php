@@ -6,6 +6,10 @@
   <title><?php wp_title( '|', true, 'right' ); ?></title>
   <link rel="profile" href="http://gmpg.org/xfn/11">
   <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+
   <?php wp_head(); ?>
 </head>
 
@@ -18,23 +22,23 @@
           <i class="fill"></i>
         </div>
 
-        <ul class="navigation left">
-          <li class="active">
-            <a href="<?php echo esc_url( home_url( '/category/eventy' ) ); ?>">Wydarzenia</a>
-          </li>
-          <li>
-            <a href="<?php echo esc_url( home_url( '/o-nas' ) ); ?>">O nas</a>
-          </li>
-        </ul>
+        <?php
+        wp_nav_menu(array(
+          'theme_location' => 'primary_left',
+          'menu_class' => 'navigation left',
+          'container' => false,
+          'walker' => new Akai_Walker_Nav_Menu
+        ));
+        ?>
 
-        <ul class="navigation right">
-          <li>
-            <a href="<?php echo esc_url( home_url( '/zespol' ) ); ?>">Zespół</a>
-          </li>
-          <li>
-            <a href="<?php echo esc_url( home_url( '/wspolpraca' ) ); ?>">Współpraca</a>
-          </li>
-        </ul>
+        <?php
+        wp_nav_menu(array(
+          'theme_location' => 'primary_right',
+          'menu_class' => 'navigation right',
+          'container' => false,
+          'walker' => new Akai_Walker_Nav_Menu
+        ));
+        ?>
       </div>
     </div>
 
