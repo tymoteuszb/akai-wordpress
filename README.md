@@ -1,10 +1,10 @@
-== AKAI Wordpress Webpage
+# AKAI Wordpress Webpage
 
 ## Requirements
 
 * apache + php 5.4
 * npm
-* ruby (`sass` gem)
+* ruby (for deploy with wordmove)
 * mysql
 
 ## Stack
@@ -15,10 +15,26 @@
 
 ## Installation
 
-1. Clone the repo or copy the app from other server by PHP
-2. Configure database access in wp-config.php
-3. See if all is working correctly
-4. `cd wp-content/themes/akai-new && npm install && grunt build`
+```
+g clone akai-wordpress
+cd akai-wordpress
+
+bundle install
+wordmove pull -e staging # not necessary
+
+cp local-config.sample.php local-config.php
+vi local-config.php # configure database access
+
+# now, see if wordpress is running up correctly
+
+cd wp-content/themes/akai-new
+npm install
+grunt server
+
+# if everything went okay, now if you can work on the theme or anything =)
+# Remember to read "Theme configuration" section below in this README.
+
+```
 
 ## Usage
 
@@ -26,10 +42,10 @@
 
 `yo wordpress:plugin`
 
-#### Configure theme
+#### Theme configuration
 
 ```
-cd wp-content/themes/akai-new && grunt
+cd wp-content/themes/akai-new && grunt server
 # Now you can edit akai-new theme.
 
 # Don't manually edit ./assets/css/*.css and ./assets/js/*.js files!

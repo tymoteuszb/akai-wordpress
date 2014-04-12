@@ -1,0 +1,50 @@
+GIT
+  remote: git://github.com/welaika/wordmove.git
+  revision: 5b8d187615bdc913f322801de22ebd9e7a21ae55
+  specs:
+    wordmove (1.1.0)
+      activesupport
+      colored
+      escape
+      i18n
+      photocopier (~> 0.0.10)
+      rake
+      thor
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    activesupport (4.1.0)
+      i18n (~> 0.6, >= 0.6.9)
+      json (~> 1.7, >= 1.7.7)
+      minitest (~> 5.1)
+      thread_safe (~> 0.1)
+      tzinfo (~> 1.1)
+    colored (1.2)
+    escape (0.0.4)
+    i18n (0.6.9)
+    json (1.8.1)
+    minitest (5.3.2)
+    net-scp (1.2.0)
+      net-ssh (>= 2.6.5)
+    net-ssh (2.8.0)
+    net-ssh-gateway (1.2.0)
+      net-ssh (>= 2.6.5)
+    photocopier (0.0.10)
+      activesupport
+      escape
+      i18n
+      net-scp
+      net-ssh
+      net-ssh-gateway
+    rake (10.2.2)
+    thor (0.19.1)
+    thread_safe (0.3.3)
+    tzinfo (1.1.0)
+      thread_safe (~> 0.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  wordmove!
