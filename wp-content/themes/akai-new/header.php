@@ -9,14 +9,16 @@
 
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.22/skrollr.js"></script>
 
   <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
 
-  <header class="site-header">
+  <header class="site-header big" data-0="position:relative" data-_smallheader="position:fixed">
     <div class="navigation-bar">
+      <div class="bg"></div>
       <div class="container">
         <div class="navigation center">
           <i class="fill"></i>
@@ -42,11 +44,11 @@
       </div>
     </div>
 
-    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="logo">
-      <img src="<?php bloginfo('template_directory'); ?>/images/logo.svg" alt="AKAI">
+    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="logo" onclick="return changeHeader();" data-0="width:250px;height:250px;margin-top:-160px" data-_smallheader="width:60px;height:60px;margin-top:-65px">
+      <img src="<?php bloginfo('template_directory'); ?>/images/logo.svg" alt="AKAI" data-0="padding:40px" data-_smallheader="padding:0px">
     </a>
 
-    <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">Akademickie Koło Aplikacji Internetowych</a></h1>
+    <h1 class="site-title" data-_smallheaderthird="opacity:1" data-_smallheaderhalf="opacity:0;display:block" data-_smallheader="display:none"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">Akademickie Koło Aplikacji Internetowych</a></h1>
 
     <div class="social-buttons">
       <a href="#">
@@ -61,5 +63,5 @@
     </div>
   </header>
 
-  <div id="main" class="site-main">
+  <div id="main" class="site-main" data-0="padding-top:!0" data-_smallheader="padding-top:!105px">
     <div class="container">

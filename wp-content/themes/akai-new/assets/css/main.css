@@ -605,6 +605,9 @@ dl {
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
+body {
+  padding-top: 140px; }
+
 .container {
   *zoom: 1;
   max-width: 68em;
@@ -617,15 +620,35 @@ dl {
     clear: both; }
 
 .site-header {
-  text-align: center; }
+  text-align: center;
+  top: 0;
+  width: 100%;
+  z-index: 2; }
   .site-header .navigation-bar {
     position: relative;
     line-height: 70px;
     color: white;
     background-color: #00263d;
-    font-family: "Polaris", Georgia, Cambria, "Times New Roman", Times, serif; }
+    font-family: "Polaris", Georgia, Cambria, "Times New Roman", Times, serif;
+    background-color: transparent;
+    overflow: hidden; }
     .site-header .navigation-bar a {
       color: inherit; }
+    .site-header .navigation-bar .bg {
+      width: 100%;
+      height: 100%; }
+      .site-header .navigation-bar .bg:before, .site-header .navigation-bar .bg:after {
+        content: " ";
+        display: block;
+        position: absolute;
+        background-color: #00263d;
+        width: 50%;
+        height: 100%;
+        top: 0; }
+      .site-header .navigation-bar .bg:before {
+        left: -125px; }
+      .site-header .navigation-bar .bg:after {
+        right: -125px; }
     .site-header .navigation-bar .navigation {
       position: relative;
       display: inline-block;
@@ -656,7 +679,11 @@ dl {
           margin: 0 auto;
           width: 250px;
           height: 70px;
-          background-color: white; }
+          background-color: white;
+          background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(100%, rgba(255, 255, 255, 0)));
+          background-image: -webkit-linear-gradient(white, rgba(255, 255, 255, 0));
+          background-image: linear-gradient(white, rgba(255, 255, 255, 0));
+          background-color: transparent; }
       .site-header .navigation-bar .navigation.left {
         text-align: right;
         float: left;
@@ -730,15 +757,15 @@ dl {
   .site-header .logo {
     display: block;
     margin: 0 auto;
-    margin-top: -160px;
     position: relative;
-    width: 250px;
-    height: 250px; }
+    margin-top: -65px;
+    width: 60px;
+    height: 60px; }
     .site-header .logo img {
       display: inline-block;
       width: 100%;
       height: 100%;
-      padding: 40px; }
+      padding: 0; }
   .site-header .site-title {
     margin-top: -30px;
     font-family: Polaris;
@@ -748,17 +775,12 @@ dl {
     line-height: 60px; }
     .site-header .site-title a {
       color: inherit; }
-  .site-header.big {
-    padding-top: 140px;
-    border-bottom: 4px solid #e8e8e8; }
-  .site-header:not(.big) .site-title, .site-header:not(.big) .social-buttons {
-    display: none; }
-  .site-header:not(.big) .logo {
-    margin-top: -65px;
-    width: 60px;
-    height: 60px; }
-    .site-header:not(.big) .logo img {
-      padding: 0; }
+  .site-header.big .logo {
+    margin-top: -160px;
+    width: 250px;
+    height: 250px; }
+    .site-header.big .logo img {
+      padding: 40px; }
 
 .site-main {
   margin: 40px; }
@@ -815,6 +837,14 @@ dl {
   height: 1px;
   border-top: 1px solid #e8e8e8;
   margin: 1.618em 0; }
+
+body.admin-bar {
+  margin-top: -32px;
+  margin-bottom: 32px; }
+
+#wpadminbar {
+  top: auto;
+  bottom: 0; }
 
 .btn {
   margin: 0 0.2em; }
