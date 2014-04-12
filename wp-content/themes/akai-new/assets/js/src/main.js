@@ -14,7 +14,8 @@
       smallheaderthird: 140 / 3,
       smallheaderhalf: 140 / 2,
       smallheader: 140
-    }
+    },
+    forceHeight: false
   });
 
   window.changeHeader = function() {
