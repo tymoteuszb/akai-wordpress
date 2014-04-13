@@ -4,6 +4,8 @@
 define( 'AKAI_VERSION', '0.1.0' );
 define('SCRIPT_DEBUG', true);
 
+define('EVENTS_CATEGORY_ID', 5);
+
 include 'includes/template_tags.php';
  
 
@@ -124,3 +126,12 @@ class Akai_Walker_Nav_Menu extends Walker_Nav_Menu {
     return parent::start_el($output, $item, $depth, $args, $id);
   }
 }
+
+
+// Show only posts from 'events' category on the home page
+function akai_home_page_posts_query($query) {
+  if ($query->is_home() && $query->is_main_query()){
+    $query->set('cat', EVENTS_CATEGORY_ID);
+  }
+}
+add_action( 'pre_get_posts', 'akai_home_page_posts_query' );

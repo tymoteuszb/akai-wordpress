@@ -1,9 +1,9 @@
 $caption-height: 45px
 
-.events
+.events-container
   +row
   
-  > .post
+  .post
     +span-columns(4)
     +omega(3n)
     position: relative
@@ -62,3 +62,18 @@ $caption-height: 45px
     &:hover
       figcaption
         opacity: 1
+
+.events-more
+  text-align: center
+  font-weight: bolder
+  font-size: 18px
+  margin: 1em 0
+
+#infscr-loading
+  text-align: center
+  padding: 1em 0
+  clear: both
+  > img
+    display: none
+  i.fa
+    font-size: 40px

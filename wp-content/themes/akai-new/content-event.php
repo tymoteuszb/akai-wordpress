@@ -2,7 +2,11 @@
 
 <a href="<?php esc_attr_e(get_permalink()); ?>" id="post-<?php the_ID(); ?>" <?php post_class('eventbox'); ?>>
   <figure>
+  <?php if (has_post_thumbnail()): ?>
     <?php the_post_thumbnail('post-thumbnail'); ?>
+  <?php else: ?>
+    <img src="<?php bloginfo('template_directory'); ?>/images/logo.svg" alt="<?php esc_attr_e(get_the_title()) ?>">
+  <?php endif ?>
 
     <figcaption>
       <h4 class="entry-title"><?php the_title(); ?></h4>

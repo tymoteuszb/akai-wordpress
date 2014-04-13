@@ -11,28 +11,25 @@
 
 get_header(); ?>
 
-<?php if ( have_posts() ) : ?>
+<div class="events" data-page="<?php echo (int) get_query_var('paged') ? : 1; ?>">
+  <?php if ( have_posts() ) : ?>
+    <div class="events-container">
+      <?php while ( have_posts() ) : the_post(); ?>
+        <?php get_template_part( 'content', 'event' ); ?>
+      <?php endwhile; ?>
+    </div>
 
-<div class="events">
-  <?php
-      // Start the Loop.
-      while ( have_posts() ) : the_post();
+    <?php if (get_next_posts_link()) : ?>
+      <div class="events-more block nav-below">
+        <span class="nav-next"><a href="<?php echo get_next_posts_page_link(); ?>">Załaduj więcej</a></span>
+      </div>
+    <?php endif; ?>
 
-      /*
-       * Include the post format-specific template for the content. If you want to
-       * use this in a child theme, then include a file called called content-___.php
-       * (where ___ is the post format) and that will be used instead.
-       */
-      get_template_part( 'content', 'event' );
+  <?php else: ?>
 
-      endwhile;
+    <?php get_template_part( 'content', 'none' ); ?>
 
-    else :
-      // If no content, include the "No posts found" template.
-      get_template_part( 'content', 'none' );
-
-    endif;
-  ?>
+  <?php endif ?>
 </div>
 
 <?php
