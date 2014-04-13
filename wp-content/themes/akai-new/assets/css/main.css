@@ -623,6 +623,7 @@ body {
   text-align: center;
   top: 0;
   width: 100%;
+  border-bottom: 4px solid #e8e8e8;
   z-index: 2; }
   .site-header .navigation-bar {
     position: relative;
@@ -766,15 +767,16 @@ body {
       width: 100%;
       height: 100%;
       padding: 0; }
-  .site-header .site-title {
+  .site-header .site-header-links {
     margin-top: -30px;
-    font-family: Polaris;
-    font-size: 18px;
-    font-weight: normal;
     color: #898989;
     line-height: 60px; }
-    .site-header .site-title a {
-      color: inherit; }
+    .site-header .site-header-links .site-title {
+      font-family: Polaris;
+      font-size: 18px;
+      font-weight: normal; }
+      .site-header .site-header-links .site-title a {
+        color: inherit; }
   .site-header.big .logo {
     margin-top: -160px;
     width: 250px;
@@ -955,6 +957,18 @@ img[class^="wp-image-"], img[class*=" wp-image-"] {
   line-height: 1;
   margin-bottom: 0.6em; }
 
+.entry-content ul, .entry-content ol {
+  margin-left: 1.4em;
+  list-style-type: circle; }
+  .entry-content ul li, .entry-content ol li {
+    margin: 0.75em 0; }
+.entry-content a {
+  text-decoration: underline;
+  color: #00263d; }
+  .entry-content a:hover {
+    text-decoration: none;
+    color: #00263d; }
+
 .entry-header .addthis_toolbox {
   display: inline-block;
   margin: 0;
@@ -1053,16 +1067,17 @@ img[class^="wp-image-"], img[class*=" wp-image-"] {
   #infscr-loading i.fa {
     font-size: 40px; }
 
-.partners h2 {
-  font-weight: normal;
-  line-height: 1;
-  margin-bottom: 40px;
-  margin-top: 25px; }
 .partners .images {
   text-align: center; }
   .partners .images .partner {
     margin: 1em;
-    display: inline-block; }
+    display: inline-block;
+    height: 5em; }
+    .partners .images .partner img {
+      height: 100%;
+      width: auto;
+      max-width: 100%;
+      bottom: 1px solid #e8e8e8; }
 
 .team .people {
   overflow: hidden;

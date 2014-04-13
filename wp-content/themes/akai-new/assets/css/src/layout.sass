@@ -19,9 +19,9 @@ body
 
 .site-header
   text-align: center
-  // border-bottom: 4px solid $light-gray
   top: 0
   width: 100%
+  border-bottom: 4px solid $light-gray
   z-index: 2
 
   .navigation-bar
@@ -135,15 +135,17 @@ body
       height: 100%
       padding: 0
 
-  .site-title
+  .site-header-links
     margin-top: -30px
-    font-family: Polaris
-    font-size: 18px
-    font-weight: normal
     color: $medium-gray
     line-height: 60px
-    a
-      color: inherit
+
+    .site-title
+      font-family: Polaris
+      font-size: 18px
+      font-weight: normal
+      a
+        color: inherit
     
   &.big
     // padding-top: $navigation-bar-margin

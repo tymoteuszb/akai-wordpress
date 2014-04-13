@@ -18,9 +18,4 @@
     forceHeight: false
   });
 
-  window.changeHeader = function() {
-    document.querySelector('.site-header').classList.toggle('big');
-
-    return false;
-  };
  } )( this );

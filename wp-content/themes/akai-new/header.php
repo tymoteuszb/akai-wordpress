@@ -16,7 +16,7 @@
 
 <body <?php body_class(); ?>>
 
-  <header class="site-header big" data-0="position:relative" data-_smallheader="position:fixed">
+  <header class="site-header big" data-0="position:relative;border-bottom-width:4px" data-_smallheader="position:fixed;border-bottom-width:0px" >
     <div class="navigation-bar">
       <div class="bg"></div>
       <div class="container">
@@ -44,22 +44,24 @@
       </div>
     </div>
 
-    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="logo" onclick="return changeHeader();" data-0="width:250px;height:250px;margin-top:-160px" data-_smallheader="width:60px;height:60px;margin-top:-65px">
+    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="logo" data-0="width:250px;height:250px;margin-top:-160px" data-_smallheader="width:60px;height:60px;margin-top:-65px">
       <img src="<?php bloginfo('template_directory'); ?>/images/logo.svg" alt="AKAI" data-0="padding:40px" data-_smallheader="padding:0px">
     </a>
 
-    <h1 class="site-title" data-_smallheaderthird="opacity:1" data-_smallheaderhalf="opacity:0;display:block" data-_smallheader="display:none"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">Akademickie Koło Aplikacji Internetowych</a></h1>
+    <div class="site-header-links" data-_smallheaderthird="opacity:1" data-_smallheaderhalf="opacity:0;display:block" data-_smallheader="display:none">
+      <h1 class="site-title" data-_smallheaderthird="opacity:1" data-_smallheaderhalf="opacity:0;display:block" data-_smallheader="display:none"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">Akademickie Koło Aplikacji Internetowych</a></h1>
 
-    <div class="social-buttons">
-      <a href="#">
-        <i class="akaicon akaicon-facebook"></i>
-      </a>
-      <a href="#">
-        <i class="akaicon akaicon-twitter"></i>
-      </a>
-      <a href="#">
-        <i class="akaicon akaicon-mail"></i>
-      </a>
+      <div class="social-buttons">
+        <a href="#">
+          <i class="akaicon akaicon-facebook"></i>
+        </a>
+        <a href="#">
+          <i class="akaicon akaicon-twitter"></i>
+        </a>
+        <a href="#">
+          <i class="akaicon akaicon-mail"></i>
+        </a>
+      </div>
     </div>
   </header>
 
