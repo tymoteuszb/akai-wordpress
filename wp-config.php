@@ -19,6 +19,8 @@ if (file_exists(dirname(__FILE__) . '/local-config.php')) {
 	include(dirname(__FILE__) . '/local-config.php');
 }
 
+define('DB_CHARSET', 'utf8');
+define('DB_COLLATE', 'utf8_polish_ci');
 
 /**#@-*/
 

@@ -32,7 +32,7 @@ get_header();
       ));
       while (have_posts()): the_post(); ?>
         <a href="<?php esc_attr_e( get_field('homepage_url') ) ?>" class="partner">
-          <?php the_post_thumbnail(); ?>
+          <?php the_post_thumbnail('medium'); ?>
         </a>
       <?php endwhile; ?>
     </div>
