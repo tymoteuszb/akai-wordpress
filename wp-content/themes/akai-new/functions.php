@@ -135,3 +135,35 @@ function akai_home_page_posts_query($query) {
   }
 }
 add_action( 'pre_get_posts', 'akai_home_page_posts_query' );
+
+
+
+// DANGER! Used only once when migrating old AKAI to new. Dont use it if you dont know what u're doing.
+function akai_migrate_old_thumbnails()
+{
+  $local_path = '/var/www/akai-new/';
+  $thumbnails = [];
+
+  $q = query_posts([
+    'category' => EVENTS_CATEGORY_ID,
+    'posts_per_page' => -1
+  ]);
+  while (have_posts()) {
+    the_post();
+    $url = wp_get_attachment_url( get_post_thumbnail_id());
+    $path = str_replace(home_url('/'), $local_path, $url);
+    $thumbnails[] = $path;
+
+    if (!file_exists("{$path}.backup")) {
+      system("cp {$path} {$path}.backup");
+    }
+
+    if (!file_exists("{$path}.backup")) {
+      die("Something went wrong - '{$path}.backup' doesnt exist still!");
+    }
+
+    system("convert {$path}.backup -resize 300x200 -gravity center -crop 274x174+0+0 +repage {$path}");
+  }
+
+  return $thumbnails;
+}
