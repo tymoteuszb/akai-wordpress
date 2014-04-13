@@ -3,6 +3,30 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class('single'); ?>>
   <header class="entry-header">
     <h1 class="entry-title"><?php the_title(); ?></h1>
+
+    <?php if (get_field('registration_url')): ?>
+      <a href="<?php esc_attr_e(get_field('registration_url')); ?>" class="btn btn-blue">
+        <i class="fa fa-check-square-o"></i>
+        Rejestracja
+      </a>
+    <?php endif ?>
+
+    <?php if (get_field('facebook_url')): ?>
+      <a href="<?php esc_attr_e(get_field('facebook_url')); ?>" class="btn btn-blue">
+        <i class="fa fa-facebook-square"></i>
+        Wydarzenie na Facebooku
+      </a>
+    <?php endif ?>
+
+    <?php /*if (get_field('event_date')): ?>
+      <a href="<?php esc_attr_e(akai_add_to_calendar_url()); ?>" class="btn btn-blue">
+        <i class="fa fa-google-plus-square"></i>
+        Dodaj do kalendarza
+      </a>
+    <?php endif */?>
+
+    <?php //echo do_shortcode('[ssba]'); ?>
+    <?php do_action('addthis_widget',get_permalink($post->ID), get_the_title($post->ID), 'fb_tw_p1_sc'); ?>
   </header>
 
   <section class="entry-main column content">
@@ -39,20 +63,6 @@
         </div>
       </section>
     <?php endif ?>
-
-    <?php akai_add_to_calendar( @date_create( get_field('date') . get_field('time') )); ?>
-
-    <?php if (get_field('registration')): ?>
-      <section class="entry-registration">
-        <h4>Rejestracja</h4>
-        <?php the_field('registration'); ?>
-      </section>
-    <?php endif ?>
-  
-    <section class="entry-share">
-      <h4>Udostępnij</h4>
-      sharing (fb/tweet)
-    </section>
   </aside>
 
 </article><!-- #post-<?php the_ID(); ?> -->

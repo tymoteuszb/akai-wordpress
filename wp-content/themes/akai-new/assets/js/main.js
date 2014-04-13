@@ -58,7 +58,6 @@ function render_map( element ) {
  
 function add_marker( marker, map ) {
  
-  debugger
   var latlng = new google.maps.LatLng( marker.dataset.lat, marker.dataset.lng );
  
   // create marker
