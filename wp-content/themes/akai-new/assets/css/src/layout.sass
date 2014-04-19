@@ -115,8 +115,7 @@ body
           margin: 0 auto
           width: $navigation-logo-size
           height: $navigation-bar-height
-          +linear-gradient(#fff, rgba(#fff, 0))
-          background-color: transparent
+          background-color: #fff
 
       &.left
         text-align: right
@@ -206,13 +205,15 @@ body
         padding: $navigation-big-logo-padding
 
 .site-main
-  margin: 40px
+  margin: 40px 0
   -skrollr-animation-name: site_main
 
   
 .site-footer
   +bar
   line-height: $footer-bar-height
+  +media($tablet)
+    padding: 0 $gutter
 
   .copyright
     +span-columns(6)
@@ -232,18 +233,25 @@ body
 
 .horizontal-photo
   background-size: cover
-  background-position: cover
+  background-position: center
   height: 370px
   margin-bottom: $gutter
   border: 1px solid $light-gray
 
 
 .column
+  +media($tablet)
+    padding: 0 $gutter
+
   &.content
     +span-columns(8)
+    +media($tablet)
+      +span-columns(8)
 
   &.sidebar
     +span-columns(4)
+    +media($tablet)
+      +span-columns(8)
 
   > section
     + section
@@ -262,6 +270,7 @@ body.admin-bar
 #wpadminbar
   top: auto !important
   bottom: 0
+  position: fixed !important
   .menupop .ab-sub-wrapper, 
   .shortlink-input
     bottom: 32px

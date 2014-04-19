@@ -10,10 +10,15 @@
       line-height: 1
       margin-bottom: .2em
     
+    .person-list
+      +display(flex)
+      +flex-wrap(wrap)
+      +justify-content(space-between)
+
     .person
-      +span-columns(3)
-      +omega(4n)
-      margin-top: $gutter        
+      margin: $gutter auto 0
+      width: 225px
+      display: inline-block
 
       figure
         margin: 0

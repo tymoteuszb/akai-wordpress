@@ -26,13 +26,15 @@ get_header();
   	<section class="people">
   		<h3><?php echo $person_category->cat_name; ?></h3>
       
-      <div class="people-list">
+      <div class="person-list">
         <?php
         // Get all people on this person_category
         query_posts(Array(
           'person_category' => $person_category->slug,
           'posts_per_page' => -1,
-          'post_type' => 'person'
+          'post_type' => 'person',
+          'orderby' => 'menu_order',
+          'order' => 'ASC'
         ));
         while (have_posts()) {
           the_post();

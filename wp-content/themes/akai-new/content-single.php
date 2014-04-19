@@ -49,15 +49,16 @@
     <?php endif ?>
 
     <?php if (get_field('event_date')): ?>
-      <section class="entry-datelocation">
+      <section class="entry-date">
         <h4>Czas</h4>
         <?php echo ucfirst(date_i18n('l, j F Y, H:i', get_field('event_date'))); ?>
       </section>
     <?php endif ?>
 
     <?php if ($location = get_field('location')): ?>
-      <section class="entry-datelocation">
+      <section class="entry-location">
         <h4>Miejsce</h4>
+        <?php echo $location['address']; ?>
         <div class="acf-map">
           <div class="marker" data-lat="<?php echo $location['lat']; ?>" data-lng="<?php echo $location['lng']; ?>"></div>
         </div>

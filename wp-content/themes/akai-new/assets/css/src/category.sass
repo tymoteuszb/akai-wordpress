@@ -5,6 +5,12 @@
     +span-columns(4)
     +omega(3n)
     position: relative
+    +media($tablet)
+      +span-columns(4)
+      +omega(3n)
+    +media($mobile)
+      +span-columns(4)
+      +omega(3n)
 
     + .post
       margin-bottom: $gutter
@@ -14,6 +20,7 @@
       img
         width: 100%
         height: 175px
+        display: block
 
       figcaption
         font-size: 14px
