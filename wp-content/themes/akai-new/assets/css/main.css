@@ -770,13 +770,21 @@ body {
   .site-header .site-header-links {
     margin-top: -30px;
     color: #898989;
-    line-height: 60px; }
+    line-height: 1; }
+    .site-header .site-header-links a {
+      color: inherit; }
     .site-header .site-header-links .site-title {
       font-family: Polaris;
       font-size: 18px;
-      font-weight: normal; }
-      .site-header .site-header-links .site-title a {
-        color: inherit; }
+      font-weight: normal;
+      margin: 15px 0; }
+    .site-header .site-header-links .social-buttons {
+      margin: 15px 0;
+      font-size: 13px; }
+      .site-header .site-header-links .social-buttons a {
+        margin: 0 10px; }
+        .site-header .site-header-links .social-buttons a:hover {
+          color: #00263d; }
   .site-header.big .logo {
     margin-top: -160px;
     width: 250px;
@@ -792,7 +800,8 @@ body {
   line-height: 70px;
   color: white;
   background-color: #00263d;
-  font-family: "Polaris", Georgia, Cambria, "Times New Roman", Times, serif; }
+  font-family: "Polaris", Georgia, Cambria, "Times New Roman", Times, serif;
+  line-height: 100px; }
   .site-footer a {
     color: inherit; }
   .site-footer .copyright {
@@ -807,9 +816,13 @@ body {
     display: block;
     margin-right: 2.35765%;
     width: 48.82117%;
-    text-align: right; }
+    text-align: right;
+    line-height: 1; }
     .site-footer .partners:last-child {
       margin-right: 0; }
+    .site-footer .partners img {
+      height: 70px;
+      margin: 15px 0 15px 30px; }
 
 .horizontal-photo {
   background-size: cover;

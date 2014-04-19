@@ -138,14 +138,24 @@ body
   .site-header-links
     margin-top: -30px
     color: $medium-gray
-    line-height: 60px
+    line-height: 1
+    a
+      color: inherit
 
     .site-title
       font-family: Polaris
       font-size: 18px
       font-weight: normal
+      margin: 15px 0
+
+    .social-buttons
+      margin: 15px 0
+      font-size: 13px
       a
-        color: inherit
+        margin: 0 10px
+        &:hover
+          color: $blue
+
     
   &.big
     // padding-top: $navigation-bar-margin
@@ -162,6 +172,7 @@ body
   
 .site-footer
   +bar
+  line-height: 100px
 
   .copyright
     +span-columns(6)
@@ -169,6 +180,11 @@ body
   .partners
     +span-columns(6)
     text-align: right
+    line-height: 1
+
+    img
+      height: 70px
+      margin: 15px 0 15px 30px
 
 
 // Other layout stuff

@@ -21,7 +21,10 @@
 
       <section class="partners">
         <a href="http://put.poznan.pl/" class="partner">
-          Poznań University of Technology
+          <img src="<?php bloginfo('template_directory'); ?>/images/pp.svg" alt="Politechnika Poznańska">
+        </a>
+        <a href="http://amu.edu.pl/" class="partner">
+          <img src="<?php bloginfo('template_directory'); ?>/images/uam.svg" alt="Uniwersytet Adama Mickiewicza">
         </a>
       </section>
     </div>

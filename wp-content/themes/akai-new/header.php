@@ -52,14 +52,21 @@
       <h1 class="site-title" data-_smallheaderthird="opacity:1" data-_smallheaderhalf="opacity:0;display:block" data-_smallheader="display:none"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">Akademickie Koło Aplikacji Internetowych</a></h1>
 
       <div class="social-buttons">
-        <a href="#">
-          <i class="akaicon akaicon-facebook"></i>
+        <a href="http://www.facebook.com/akai.pp">
+          <i class="fa fa-facebook"></i>
+          akai.pp
+        </a>
+        <a href="http://twitter.com/akai_pp">
+          <i class="fa fa-twitter"></i>
+          akai_pp
+        </a>
+        <a href="mailto:kontakt@akai.org.pl">
+          <i class="fa fa-envelope"></i>
+          kontakt@akai.org.pl
         </a>
         <a href="#">
-          <i class="akaicon akaicon-twitter"></i>
-        </a>
-        <a href="#">
-          <i class="akaicon akaicon-mail"></i>
+          <i class="fa fa-rss"></i>
+          RSS
         </a>
       </div>
     </div>
