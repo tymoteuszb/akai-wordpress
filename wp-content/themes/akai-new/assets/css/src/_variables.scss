@@ -6,11 +6,13 @@ $serif: "Polaris", Georgia, Cambria, "Times New Roman", Times, serif;
 $base-font-family: $sans-serif;
 $header-font-family: $base-font-family;
 
+
 // Sizes
 ///////////////////////////////////////////////////////////////////////////////
 $base-font-size: 14px;
 $base-line-height: 1.5;
 $base-border-radius: em(3);
+
 
 // Colors
 ///////////////////////////////////////////////////////////////////////////////
@@ -52,13 +54,18 @@ $success-color: $light-green;
 $event-caption-height: 45px;
 
 // layout.sass
-$bar-height: 70px;
+$bar-height: 60px;
 
+$navigation-border-bottom-width: 4px;
 $navigation-arrow-width: 30px;
 $navigation-bar-height: $bar-height;
 $navigation-bar-margin: 140px;
 $navigation-logo-size: 250px;
+$navigation-big-logo-padding: 40px;
+$navigation-small-logo-margin: 10px;
+
+$footer-bar-height: 100px;
 
 $navigation-overall-size: $navigation-bar-height + 2 * $navigation-bar-margin;
-$navigation-logo-margin: ($navigation-overall-size - $logo-size) / 2;
+$navigation-logo-margin: ($navigation-overall-size - $navigation-logo-size) / 2;
 

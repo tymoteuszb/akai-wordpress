@@ -605,6 +605,46 @@ dl {
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
+@-skrollr-keyframes site_header {
+  0 {
+    position: relative;
+    border-bottom-width: 4px; }
+
+  _smallheader {
+    position: fixed;
+    border-bottom-width: 0px; } }
+@-skrollr-keyframes navigation_logo {
+  0 {
+    width: 250px;
+    height: 250px;
+    margin-top: -155px; }
+
+  _smallheader {
+    width: 50px;
+    height: 50px;
+    margin-top: -55px; } }
+@-skrollr-keyframes navigation_logo_img {
+  0 {
+    padding: 40px; }
+
+  _smallheader {
+    padding: 0px; } }
+@-skrollr-keyframes site_header_links {
+  _smallheaderthird {
+    opacity: 1; }
+
+  _smallheaderhalf {
+    opacity: 0;
+    display: block; }
+
+  _smallheader {
+    display: none; } }
+@-skrollr-keyframes site_main {
+  0 {
+    padding-top: ! 0; }
+
+  _smallheader {
+    padding-top: ! 95px; } }
 body {
   padding-top: 140px; }
 
@@ -624,10 +664,11 @@ body {
   top: 0;
   width: 100%;
   border-bottom: 4px solid #e8e8e8;
-  z-index: 2; }
+  z-index: 2;
+  -skrollr-animation-name: site_header; }
   .site-header .navigation-bar {
     position: relative;
-    line-height: 70px;
+    line-height: 60px;
     color: white;
     background-color: #00263d;
     font-family: "Polaris", Georgia, Cambria, "Times New Roman", Times, serif;
@@ -679,7 +720,7 @@ body {
           display: block;
           margin: 0 auto;
           width: 250px;
-          height: 70px;
+          height: 60px;
           background-color: white;
           background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(100%, rgba(255, 255, 255, 0)));
           background-image: -webkit-linear-gradient(white, rgba(255, 255, 255, 0));
@@ -695,8 +736,8 @@ body {
           position: absolute;
           width: 0;
           height: 0;
-          border-top: 35px solid transparent;
-          border-bottom: 35px solid transparent;
+          border-top: 30px solid transparent;
+          border-bottom: 30px solid transparent;
           border-left: 30px solid #00263d;
           bottom: 0px;
           right: -30px; }
@@ -708,8 +749,8 @@ body {
             position: absolute;
             width: 0;
             height: 0;
-            border-top: 35px solid transparent;
-            border-bottom: 35px solid transparent;
+            border-top: 30px solid transparent;
+            border-bottom: 30px solid transparent;
             border-left: 30px solid #00263d;
             bottom: 0px;
             right: -30px; }
@@ -730,8 +771,8 @@ body {
           position: absolute;
           width: 0;
           height: 0;
-          border-top: 35px solid transparent;
-          border-bottom: 35px solid transparent;
+          border-top: 30px solid transparent;
+          border-bottom: 30px solid transparent;
           border-right: 30px solid #00263d;
           bottom: 0px;
           left: -30px; }
@@ -743,8 +784,8 @@ body {
             position: absolute;
             width: 0;
             height: 0;
-            border-top: 35px solid transparent;
-            border-bottom: 35px solid transparent;
+            border-top: 30px solid transparent;
+            border-bottom: 30px solid transparent;
             border-right: 30px solid #00263d;
             bottom: 0px;
             left: -30px; }
@@ -759,18 +800,21 @@ body {
     display: block;
     margin: 0 auto;
     position: relative;
-    margin-top: -65px;
-    width: 60px;
-    height: 60px; }
+    margin-top: -55px;
+    width: 50px;
+    height: 50px;
+    -skrollr-animation-name: navigation_logo; }
     .site-header .logo img {
       display: inline-block;
       width: 100%;
       height: 100%;
-      padding: 0; }
+      padding: 0;
+      -skrollr-animation-name: navigation_logo_img; }
   .site-header .site-header-links {
     margin-top: -30px;
     color: #898989;
-    line-height: 1; }
+    line-height: 1;
+    -skrollr-animation-name: site_header_links; }
     .site-header .site-header-links a {
       color: inherit; }
     .site-header .site-header-links .site-title {
@@ -786,18 +830,19 @@ body {
         .site-header .site-header-links .social-buttons a:hover {
           color: #00263d; }
   .site-header.big .logo {
-    margin-top: -160px;
+    margin-top: -155px;
     width: 250px;
     height: 250px; }
     .site-header.big .logo img {
       padding: 40px; }
 
 .site-main {
-  margin: 40px; }
+  margin: 40px;
+  -skrollr-animation-name: site_main; }
 
 .site-footer {
   position: relative;
-  line-height: 70px;
+  line-height: 60px;
   color: white;
   background-color: #00263d;
   font-family: "Polaris", Georgia, Cambria, "Times New Roman", Times, serif;
@@ -858,7 +903,7 @@ body.admin-bar {
   margin-bottom: 32px; }
 
 #wpadminbar {
-  top: auto;
+  top: auto !important;
   bottom: 0; }
   #wpadminbar .menupop .ab-sub-wrapper,
   #wpadminbar .shortlink-input {

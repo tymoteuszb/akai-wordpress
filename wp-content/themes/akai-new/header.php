@@ -6,17 +6,17 @@
   <title><?php wp_title( '|', true, 'right' ); ?></title>
   <link rel="profile" href="http://gmpg.org/xfn/11">
   <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+  <link rel="alternate" type="application/rss+xml" title="AKAI - Wydarzenia" href="<?= esc_attr_e(RSS_LINK); ?>" />
 
+  <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/assets/css/main.css" data-skrollr-stylesheet>
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
-  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.22/skrollr.js"></script>
 
   <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
 
-  <header class="site-header big" data-0="position:relative;border-bottom-width:4px" data-_smallheader="position:fixed;border-bottom-width:0px" >
+  <header class="site-header big">
     <div class="navigation-bar">
       <div class="bg"></div>
       <div class="container">
@@ -44,12 +44,12 @@
       </div>
     </div>
 
-    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="logo" data-0="width:250px;height:250px;margin-top:-160px" data-_smallheader="width:60px;height:60px;margin-top:-65px">
-      <img src="<?php bloginfo('template_directory'); ?>/images/logo.svg" alt="AKAI" data-0="padding:40px" data-_smallheader="padding:0px">
+    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="logo">
+      <img src="<?php bloginfo('template_directory'); ?>/images/logo.svg" alt="AKAI">
     </a>
 
-    <div class="site-header-links" data-_smallheaderthird="opacity:1" data-_smallheaderhalf="opacity:0;display:block" data-_smallheader="display:none">
-      <h1 class="site-title" data-_smallheaderthird="opacity:1" data-_smallheaderhalf="opacity:0;display:block" data-_smallheader="display:none"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">Akademickie Koło Aplikacji Internetowych</a></h1>
+    <div class="site-header-links">
+      <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">Akademickie Koło Aplikacji Internetowych</a></h1>
 
       <div class="social-buttons">
         <a href="http://www.facebook.com/akai.pp">
@@ -64,7 +64,7 @@
           <i class="fa fa-envelope"></i>
           kontakt@akai.org.pl
         </a>
-        <a href="#">
+        <a href="<?= esc_attr_e(RSS_LINK); ?>">
           <i class="fa fa-rss"></i>
           RSS
         </a>
@@ -72,5 +72,5 @@
     </div>
   </header>
 
-  <div id="main" class="site-main" data-0="padding-top:!0" data-_smallheader="padding-top:!105px">
+  <div id="main" class="site-main">
     <div class="container">

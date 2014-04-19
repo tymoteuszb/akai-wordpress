@@ -5,6 +5,8 @@ define( 'AKAI_VERSION', '0.1.0' );
 define('SCRIPT_DEBUG', true);
 
 define('EVENTS_CATEGORY_ID', 5);
+define('RSS_LINK', 'http://feeds.feedburner.com/feedburner/akai-main');
+
 
 include 'includes/template_tags.php';
  
@@ -51,9 +53,9 @@ include 'includes/template_tags.php';
  function akai_scripts_styles() {
 	$postfix = ( defined( 'SCRIPT_DEBUG' ) && true === SCRIPT_DEBUG ) ? '' : '.min';
 
-	wp_enqueue_script( 'akai', get_template_directory_uri() . "/assets/js/main{$postfix}.js", array(), AKAI_VERSION, true );
+	wp_enqueue_script( 'akai', get_template_directory_uri() . "/assets/js/main{$postfix}.js", [], AKAI_VERSION, true );
 		
-	wp_enqueue_style( 'akai', get_template_directory_uri() . "/assets/css/main{$postfix}.css", array(), AKAI_VERSION );
+	// wp_enqueue_style( 'akai', get_template_directory_uri() . "/assets/css/main{$postfix}.css", [], AKAI_VERSION );
  }
  add_action( 'wp_enqueue_scripts', 'akai_scripts_styles' );
  
@@ -110,7 +112,7 @@ add_filter('excerpt_more', 'akai_excerpt_more');
 
 // Used in primary navigation (wp_nav_menu() in header.php)
 class Akai_Walker_Nav_Menu extends Walker_Nav_Menu {
-  public function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
+  public function start_el( &$output, $item, $depth = 0, $args = [], $id = 0 ) {
 
     // If it's link to category "Events":
     // - change the URL to the homepage

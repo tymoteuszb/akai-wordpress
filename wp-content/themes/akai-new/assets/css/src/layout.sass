@@ -1,3 +1,50 @@
+$_navigation-logo-margin-top: -$navigation-bar-height -$navigation-bar-margin +$navigation-logo-margin
+
+@-skrollr-keyframes site_header
+  0
+    position: relative
+    border-bottom-width: $navigation-border-bottom-width
+
+  _smallheader
+    position: fixed
+    border-bottom-width: 0px
+
+@-skrollr-keyframes navigation_logo
+  0
+    width: $navigation-logo-size
+    height: $navigation-logo-size
+    margin-top: $_navigation-logo-margin-top
+
+  _smallheader
+    width: $navigation-bar-height - $navigation-small-logo-margin
+    height: $navigation-bar-height - $navigation-small-logo-margin
+    margin-top: -($navigation-bar-height - $navigation-small-logo-margin / 2)
+
+@-skrollr-keyframes navigation_logo_img
+  0
+    padding: $navigation-big-logo-padding
+
+  _smallheader
+    padding: 0px
+
+@-skrollr-keyframes site_header_links
+  _smallheaderthird
+    opacity: 1
+
+  _smallheaderhalf
+    opacity: 0
+    display: block
+
+  _smallheader
+    display: none
+
+@-skrollr-keyframes site_main
+  0
+    padding-top: #{"!"} 0
+
+  _smallheader
+    padding-top: #{"!"} $navigation-bar-height + 35px
+
 body
   padding-top: $navigation-bar-margin
 
@@ -8,8 +55,9 @@ body
   text-align: center
   top: 0
   width: 100%
-  border-bottom: 4px solid $light-gray
+  border-bottom: $navigation-border-bottom-width solid $light-gray
   z-index: 2
+  -skrollr-animation-name: site_header
 
   .navigation-bar
     +bar
@@ -115,17 +163,20 @@ body
     margin-top: -$navigation-bar-height + 5px
     width: $navigation-bar-height - 10px
     height: $navigation-bar-height - 10px
+    -skrollr-animation-name: navigation_logo
 
     img
       display: inline-block
       width: 100%
       height: 100%
       padding: 0
+      -skrollr-animation-name: navigation_logo_img
 
   .site-header-links
     margin-top: -30px
     color: $medium-gray
     line-height: 1
+    -skrollr-animation-name: site_header_links
     a
       color: inherit
 
@@ -148,18 +199,20 @@ body
     // padding-top: $navigation-bar-margin
 
     .logo
-      margin-top: -$navigation-bar-height -$navigation-bar-margin +$navigation-logo-margin
+      margin-top: $_navigation-logo-margin-top
       width: $navigation-logo-size
       height: $navigation-logo-size
       img
-        padding: 40px
+        padding: $navigation-big-logo-padding
 
 .site-main
   margin: 40px
+  -skrollr-animation-name: site_main
+
   
 .site-footer
   +bar
-  line-height: 100px
+  line-height: $footer-bar-height
 
   .copyright
     +span-columns(6)
@@ -170,7 +223,7 @@ body
     line-height: 1
 
     img
-      height: 70px
+      height: $footer-bar-height - 2 * 15px
       margin: 15px 0 15px 30px
 
 
@@ -207,7 +260,7 @@ body.admin-bar
   margin-top: -32px
   margin-bottom: 32px
 #wpadminbar
-  top: auto
+  top: auto !important
   bottom: 0
   .menupop .ab-sub-wrapper, 
   .shortlink-input
