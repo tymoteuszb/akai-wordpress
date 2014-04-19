@@ -43,3 +43,22 @@ $base-border-color: $light-gray;
 $error-color: $light-red;
 $notice-color: $light-yellow;
 $success-color: $light-green;
+
+
+// AKAI theme specific variables
+///////////////////////////////////////////////////////////////////////////////
+
+// category.sass
+$event-caption-height: 45px;
+
+// layout.sass
+$bar-height: 70px;
+
+$navigation-arrow-width: 30px;
+$navigation-bar-height: $bar-height;
+$navigation-bar-margin: 140px;
+$navigation-logo-size: 250px;
+
+$navigation-overall-size: $navigation-bar-height + 2 * $navigation-bar-margin;
+$navigation-logo-margin: ($navigation-overall-size - $logo-size) / 2;
+

@@ -6,21 +6,23 @@
  * Licensed under the GPLv2+ license.
  */
 
- @import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,400italic,600,700&subset=latin,latin-ext);
- @import "../fonts/polaris/stylesheet.css";
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,400italic,600,700&subset=latin,latin-ext);
+@import "../fonts/polaris/stylesheet.css";
 
-@import "normalize";
+@import "vendor/normalize";
+
+@import "variables";
 
 // See http://bourbon.io/ for more info about those SASS mixin libraries
-@import "bourbon/bourbon";
-@import "bitters/bitters";
-@import "neat/neat";
+@import "vendor/bourbon/bourbon";
+@import "vendor/bitters/bitters";
+@import "vendor/neat/neat";
 
 @import "mixins";
+
 @import "layout";
 @import "theme";
 
 @import "category";
 @import "cooperation";
-@import "single";
 @import "team";
