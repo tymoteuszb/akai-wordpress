@@ -55,7 +55,7 @@
       </section>
     <?php endif ?>
 
-    <?php if ($location = get_field('location')): ?>
+    <?php if (($location = get_field('location')) && $location['lat']): ?>
       <section class="entry-location">
         <h4>Miejsce</h4>
         <?php echo $location['address']; ?>

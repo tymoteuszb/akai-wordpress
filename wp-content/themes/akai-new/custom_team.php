@@ -7,11 +7,12 @@ get_header();
 ?>
 
 <section class="team">
-  <?php /* while (have_posts()) : the_post(); ?>
+  <?php while (have_posts()) : the_post(); ?>
 
-  	<?php get_template_part('content', 'page'); ?>
+    <?php akai_the_horizontal_photo(); ?>
+    <?php // get_template_part('content', 'page'); ?>
 
-  <?php endwhile; */ ?>
+  <?php endwhile; ?>
 
   <?php
   // Get list of person categories (they should be ordered automatically by "Category Order and Taxonomy Terms Order" plugin)
