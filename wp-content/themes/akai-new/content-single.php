@@ -25,8 +25,7 @@
       </a>
     <?php endif */?>
 
-    <?php //echo do_shortcode('[ssba]'); ?>
-    <?php do_action('addthis_widget',get_permalink($post->ID), get_the_title($post->ID), 'fb_tw_p1_sc'); ?>
+    <?php get_ssb(); ?>
   </header>
 
   <section class="entry-main column content">

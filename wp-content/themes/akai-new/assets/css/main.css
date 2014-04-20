@@ -1061,11 +1061,25 @@ img[class^="wp-image-"], img[class*=" wp-image-"] {
     text-decoration: none;
     color: #00263d; }
 
-.entry-header .addthis_toolbox {
-  display: inline-block;
-  margin: 0;
-  height: 21px;
-  padding-top: 5px; }
+.entry-header .simplesocialbuttons {
+  display: -webkit-inline-box;
+  display: -moz-inline-box;
+  display: inline-box;
+  display: -webkit-inline-flex;
+  display: -moz-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  box-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center; }
+  .entry-header .simplesocialbuttons .simplesocialbutton {
+    display: inline-block; }
 
 .events-container {
   *zoom: 1;

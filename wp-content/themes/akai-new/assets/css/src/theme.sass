@@ -70,10 +70,13 @@ img[class^="wp-image-"], img[class*=" wp-image-"]
       text-decoration: none
       color: $blue
 
-// addthis social buttons
+// social buttons
 .entry-header
-  .addthis_toolbox
-    display: inline-block
-    margin: 0
-    height: 21px
-    padding-top: 5px
+  .simplesocialbuttons
+    +display(inline-flex)
+    +justify-content(center)
+    .simplesocialbutton
+      display: inline-block
+    // margin: 0
+    // height: 21px
+    // padding-top: 5px
