@@ -12,6 +12,8 @@
   <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/assets/css/skrollr.css" media="screen and (min-width:960px)" data-skrollr-stylesheet>
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 
+  <link rel="shortcut icon" href="<?php bloginfo('template_directory'); ?>/images/logo.png" />
+
   <?php wp_head(); ?>
 </head>
 
