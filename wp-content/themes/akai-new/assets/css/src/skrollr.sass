@@ -1,0 +1,63 @@
+@import "includes"
+
+@-skrollr-keyframes site_header
+  0
+    position: relative
+    border-bottom-width: $navigation-border-bottom-width
+
+  _smallheader
+    position: fixed
+    border-bottom-width: 0px
+
+@-skrollr-keyframes navigation_logo
+  0
+    width: $navigation-logo-size
+    height: $navigation-logo-size
+    margin-top: $_navigation-logo-margin-top
+
+  _smallheader
+    width: $navigation-bar-height - $navigation-small-logo-margin
+    height: $navigation-bar-height - $navigation-small-logo-margin
+    margin-top: -($navigation-bar-height - $navigation-small-logo-margin / 2)
+
+@-skrollr-keyframes navigation_logo_img
+  0
+    padding: $navigation-big-logo-padding
+
+  _smallheader
+    padding: 0px
+
+@-skrollr-keyframes site_header_links
+  _smallheaderthird
+    opacity: 1
+
+  _smallheaderhalf
+    opacity: 0
+    display: block
+
+  _smallheader
+    display: none
+
+@-skrollr-keyframes site_main
+  0
+    padding-top: #{"!"} 0
+
+  _smallheader
+    padding-top: #{"!"} $navigation-bar-height + 35px
+
+.site-header
+  -skrollr-animation-name: site_header
+
+  .logo
+    -skrollr-animation-name: navigation_logo
+
+    img
+      -skrollr-animation-name: navigation_logo_img
+
+  .site-header-links
+    -skrollr-animation-name: site_header_links
+
+.site-main
+  -skrollr-animation-name: site_main
+
+  

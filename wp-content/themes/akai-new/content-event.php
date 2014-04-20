@@ -2,11 +2,14 @@
 
 <a href="<?php esc_attr_e(get_permalink()); ?>" id="post-<?php the_ID(); ?>" <?php post_class('eventbox'); ?>>
   <figure>
-  <?php if (has_post_thumbnail()): ?>
-    <?php the_post_thumbnail('post-thumbnail'); ?>
-  <?php else: ?>
-    <img src="<?php bloginfo('template_directory'); ?>/images/logo.svg" alt="<?php esc_attr_e(get_the_title()) ?>">
-  <?php endif ?>
+    <?php 
+    $src = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full')[0];
+    ?>
+    <?php if ($src): ?>
+      <div class="entry-image post-thumbnail" style="background-image: url(<?= $src ?>)"></div>
+    <?php else: ?>
+      <div class="entry-image post-thumbnail noimage"></div>
+    <?php endif ?>
 
     <figcaption>
       <h4 class="entry-title"><?php the_title(); ?></h4>

@@ -1,6 +1,10 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class('person'); ?>>
   <figure>
-    <?php the_post_thumbnail(); ?>
+    <?php if (has_post_thumbnail()): ?>
+      <?php the_post_thumbnail(); ?>
+    <?php else: ?>
+      <img src="<?php bloginfo('template_directory'); ?>/images/avatar.png" class="post-thumbnail">
+    <?php endif ?>
     <figcaption>
       <h4 class="entry-title"><?php the_title(); ?></h4>
       <div class="entry-position"><?php the_field('position_name'); ?></div>

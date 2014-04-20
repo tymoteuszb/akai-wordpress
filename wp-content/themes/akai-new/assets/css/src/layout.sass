@@ -1,52 +1,6 @@
-$_navigation-logo-margin-top: -$navigation-bar-height -$navigation-bar-margin +$navigation-logo-margin
-
-@-skrollr-keyframes site_header
-  0
-    position: relative
-    border-bottom-width: $navigation-border-bottom-width
-
-  _smallheader
-    position: fixed
-    border-bottom-width: 0px
-
-@-skrollr-keyframes navigation_logo
-  0
-    width: $navigation-logo-size
-    height: $navigation-logo-size
-    margin-top: $_navigation-logo-margin-top
-
-  _smallheader
-    width: $navigation-bar-height - $navigation-small-logo-margin
-    height: $navigation-bar-height - $navigation-small-logo-margin
-    margin-top: -($navigation-bar-height - $navigation-small-logo-margin / 2)
-
-@-skrollr-keyframes navigation_logo_img
-  0
-    padding: $navigation-big-logo-padding
-
-  _smallheader
-    padding: 0px
-
-@-skrollr-keyframes site_header_links
-  _smallheaderthird
-    opacity: 1
-
-  _smallheaderhalf
-    opacity: 0
-    display: block
-
-  _smallheader
-    display: none
-
-@-skrollr-keyframes site_main
-  0
-    padding-top: #{"!"} 0
-
-  _smallheader
-    padding-top: #{"!"} $navigation-bar-height + 35px
-
 body
-  padding-top: $navigation-bar-margin
+  +media($desktop)
+    padding-top: $navigation-bar-margin
 
 .container
   +outer-container
@@ -57,125 +11,143 @@ body
   width: 100%
   border-bottom: $navigation-border-bottom-width solid $light-gray
   z-index: 2
-  -skrollr-animation-name: site_header
 
-  .navigation-bar
-    +bar
-    background-color: transparent
-    overflow: hidden
-
-    .bg
-      width: 100%
-      height: 100%
-      &:before, &:after
-        content: " "
-        display: block
-        position: absolute
-        background-color: $blue
-        width: 50%
-        height: 100%
-        top: 0
-      &:before
-        left: -$navigation-logo-size / 2
-      &:after
-        right: -$navigation-logo-size / 2
-
+  +media($tablet)
+    .navigation-bar
+      +bar
     .navigation
-      position: relative
-      display: inline-block
-      width: 50%
-
       li
-        display: inline-block
-        position: relative
-        &:after
-          z-index: 2
-
         a
-          display: inline-block
-          width: 12.3em
-          text-align: center
-
+          display: block
           &:hover
             color: $orange
-
         &.current-menu-item, &.current-post-ancestor
           background-color: $orange
           color: #fff
           a:hover
             color: inherit
-        
+
+      &.left, &.right
+
       &.center
-        position: absolute
-        top: 0
-        left: 0
+        display: none    
+
+  +media($desktop)
+    .navigation-bar
+      +bar
+      background-color: transparent
+      overflow: hidden
+
+      .bg
         width: 100%
-        .fill
+        height: 100%
+        &:before, &:after
+          content: " "
           display: block
-          margin: 0 auto
-          width: $navigation-logo-size
-          height: $navigation-bar-height
-          background-color: #fff
+          position: absolute
+          background-color: $blue
+          width: 50%
+          height: 100%
+          top: 0
+        &:before
+          left: -$navigation-logo-size / 2
+        &:after
+          right: -$navigation-logo-size / 2
 
-      &.left
-        text-align: right
-        float: left
-        padding-right: $navigation-logo-size / 2
+      .navigation
+        position: relative
+        display: inline-block
+        width: 50%
+
         li
-          +has-arrow($navigation-arrow-width, $navigation-bar-height, $navigation-bar-height, right, $blue)
+          display: inline-block
+          position: relative
+          &:after
+            z-index: 2
+
           a
+            display: inline-block
+            width: 173px
+            text-align: center
+
+            &:hover
+              color: $orange
+
+          &.current-menu-item, &.current-post-ancestor
+            background-color: $orange
+            color: #fff
+            a:hover
+              color: inherit
+          
+        &.center
+          position: absolute
+          top: 0
+          left: 0
+          width: 100%
+          .fill
+            display: block
+            margin: 0 auto
+            width: $navigation-logo-size
+            height: $navigation-bar-height
+            background-color: #fff
+
+        &.left
+          text-align: right
+          float: left
+          padding-right: $navigation-logo-size / 2
+          li
             +has-arrow($navigation-arrow-width, $navigation-bar-height, $navigation-bar-height, right, $blue)
-            padding-left: $navigation-arrow-width
-            &:after
-              right: auto
-              left: 0
+            a
+              +has-arrow($navigation-arrow-width, $navigation-bar-height, $navigation-bar-height, right, $blue)
+              padding-left: $navigation-arrow-width
+              &:after
+                right: auto
+                left: 0
 
-          &.current-menu-item, &.current-post-ancestor
-            &:after
-              border-left-color: $orange
-            a:after
-              border-left-color: $blue
+            &.current-menu-item, &.current-post-ancestor
+              &:after
+                border-left-color: $orange
+              a:after
+                border-left-color: $blue
 
-      &.right
-        text-align: left
-        float: right
-        padding-left: $navigation-logo-size / 2
-        li
-          +has-arrow($navigation-arrow-width, $navigation-bar-height, $navigation-bar-height, left, $blue)
-          a
+        &.right
+          text-align: left
+          float: right
+          padding-left: $navigation-logo-size / 2
+          li
             +has-arrow($navigation-arrow-width, $navigation-bar-height, $navigation-bar-height, left, $blue)
-            padding-right: $navigation-arrow-width
-            &:after
-              left: auto
-              right: 0
+            a
+              +has-arrow($navigation-arrow-width, $navigation-bar-height, $navigation-bar-height, left, $blue)
+              padding-right: $navigation-arrow-width
+              &:after
+                left: auto
+                right: 0
 
-          &.current-menu-item, &.current-post-ancestor
-            &:after
-              border-right-color: $orange
-            a:after
-              border-right-color: $blue
+            &.current-menu-item, &.current-post-ancestor
+              &:after
+                border-right-color: $orange
+              a:after
+                border-right-color: $blue
 
   .logo
     display: block
     margin: 0 auto
     position: relative
-    margin-top: -$navigation-bar-height + 5px
     width: $navigation-bar-height - 10px
     height: $navigation-bar-height - 10px
-    -skrollr-animation-name: navigation_logo
+    +media($desktop)
+      margin-top: -$navigation-bar-height + 5px
 
     img
       display: inline-block
       width: 100%
       height: 100%
       padding: 0
-      -skrollr-animation-name: navigation_logo_img
 
   .site-header-links
     margin-top: -30px
     color: $medium-gray
     line-height: 1
-    -skrollr-animation-name: site_header_links
     a
       color: inherit
 
@@ -198,22 +170,26 @@ body
     // padding-top: $navigation-bar-margin
 
     .logo
-      margin-top: $_navigation-logo-margin-top
       width: $navigation-logo-size
       height: $navigation-logo-size
+      +media($desktop)
+        margin-top: $_navigation-logo-margin-top
       img
         padding: $navigation-big-logo-padding
 
 .site-main
   margin: 40px 0
-  -skrollr-animation-name: site_main
 
   
 .site-footer
   +bar
   line-height: $footer-bar-height
+  font-size: inherit
   +media($tablet)
     padding: 0 $gutter
+
+  .container > *
+    font-size: 16px
 
   .copyright
     +span-columns(6)
@@ -246,12 +222,12 @@ body
   &.content
     +span-columns(8)
     +media($tablet)
-      +span-columns(8)
+      +span-columns(12)
 
   &.sidebar
     +span-columns(4)
     +media($tablet)
-      +span-columns(8)
+      +span-columns(12)
 
   > section
     + section

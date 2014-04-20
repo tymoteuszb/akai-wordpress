@@ -11,14 +11,8 @@
 
 @import "vendor/normalize";
 
-// See http://bourbon.io/ for more info about those SASS mixin libraries
-@import "vendor/bourbon/bourbon";
-@import "vendor/neat/neat";
-@import "variables";
+@import "includes";
 @import "vendor/bitters/bitters";
-@import "vendor/bourbon4_flex-box";
-
-@import "mixins";
 
 @import "layout";
 @import "theme";

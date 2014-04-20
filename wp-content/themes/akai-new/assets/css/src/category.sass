@@ -2,25 +2,32 @@
   +row
   
   .post
-    +span-columns(4)
-    +omega(3n)
     position: relative
+    +media($desktop)
+      +span-columns(4)
+      +omega(3n)
     +media($tablet)
-      +span-columns(4)
-      +omega(3n)
+      +span-columns(6)
+      +omega(2n)
     +media($mobile)
-      +span-columns(4)
-      +omega(3n)
+      +span-columns(6)
+      +omega(2n)
 
     + .post
       margin-bottom: $gutter
     
     figure
       margin: 0
-      img
+      .post-thumbnail
         width: 100%
         height: 175px
         display: block
+        background-position: center
+        background-size: cover
+        background-image: url(../../images/logo.svg)
+        background-repeat: no-repeat
+        &.noimage
+          background-size: 40%
 
       figcaption
         font-size: 14px

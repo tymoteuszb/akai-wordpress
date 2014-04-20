@@ -8,7 +8,8 @@
   <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
   <link rel="alternate" type="application/rss+xml" title="AKAI - Wydarzenia" href="<?= esc_attr_e(RSS_LINK); ?>" />
 
-  <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/assets/css/main.css" data-skrollr-stylesheet>
+  <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/assets/css/main.css">
+  <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/assets/css/skrollr.css" media="screen and (min-width:960px)" data-skrollr-stylesheet>
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 
   <?php wp_head(); ?>

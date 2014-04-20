@@ -1,6 +1,5 @@
 .team
   .people
-    overflow: hidden
     margin-bottom: $gutter
 
     h3
@@ -13,10 +12,11 @@
     .person-list
       +display(flex)
       +flex-wrap(wrap)
-      +justify-content(space-between)
+      +justify-content(center)
+      margin: $gutter -17px 0 0
 
     .person
-      margin: $gutter auto 0
+      margin: $gutter 17px 0 0
       width: 225px
       display: inline-block
 
@@ -34,10 +34,10 @@
         .entry-title
           +clear-format
           font-weight: bold
-          font-size: 22px
+          font-size: 17px
 
         .entry-position
-          font-size: 18px
+          font-size: 16px
         
         .entry-icons
           font-size: 1.2em
