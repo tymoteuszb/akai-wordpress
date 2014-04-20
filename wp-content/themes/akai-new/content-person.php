@@ -32,7 +32,7 @@
           ],
           'linkedin_username' => [
             'icon' => 'fa fa-linkedin-square',
-            'value' => 'https://linkedin.com/in/%s'
+            'value' => '%s'
           ],
           'github_username' => [
             'icon' => 'fa fa-github-square',
