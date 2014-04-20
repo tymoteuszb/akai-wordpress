@@ -172,7 +172,7 @@ if ( ! class_exists( 'WpssoPostmeta' ) ) {
 			return array( $pid, $video_url );
 		}
 
-                public function get_options( $post_id, $idx = '' ) {
+    public function get_options( $post_id, $idx = '' ) {
 			if ( ! empty( $idx ) ) return false;
 			else return array();
 		}
