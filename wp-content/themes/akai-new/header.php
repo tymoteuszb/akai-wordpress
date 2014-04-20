@@ -20,6 +20,15 @@
   <header class="site-header big">
     <div class="navigation-bar">
       <div class="bg"></div>
+      
+      <div class="navigation js-expand">
+        <ul>
+          <li>
+            <a href="#">menu</a>
+          </li>
+        </ul>
+      </div>
+
       <div class="container">
         <div class="navigation center">
           <i class="fill"></i>

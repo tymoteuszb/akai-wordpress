@@ -28,7 +28,9 @@ get_header();
       <?php
       query_posts(Array(
         'posts_per_page' => -1,
-        'post_type' => 'partner'
+        'post_type' => 'partner',
+        'orderby' => 'menu_order',
+        'order' => 'ASC'
       ));
       while (have_posts()): the_post(); ?>
         <a href="<?php esc_attr_e( get_field('homepage_url') ) ?>" class="partner">

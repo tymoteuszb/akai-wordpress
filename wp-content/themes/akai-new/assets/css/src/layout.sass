@@ -15,22 +15,32 @@ body
   +media($tablet)
     .navigation-bar
       +bar
-    .navigation
-      li
-        a
-          display: block
-          &:hover
-            color: $orange
-        &.current-menu-item, &.current-post-ancestor
-          background-color: $orange
-          color: #fff
-          a:hover
-            color: inherit
 
-      &.left, &.right
+      .navigation
+        li
+          a
+            display: block
+            &:hover
+              color: $orange
+          &.current-menu-item, &.current-post-ancestor
+            background-color: $orange
+            color: #fff
+            a:hover
+              color: inherit
 
-      &.center
-        display: none    
+        &.js-expand
+          text-transform: uppercase
+
+        &.left, &.right
+          display: none
+
+        &.center
+          display: none
+
+      &.expanded
+        .navigation
+          &.left, &.right
+            display: block
 
   +media($desktop)
     .navigation-bar
@@ -78,6 +88,9 @@ body
             color: #fff
             a:hover
               color: inherit
+
+        &.js-expand
+          display: none
           
         &.center
           position: absolute
@@ -232,6 +245,9 @@ body
     +span-columns(4)
     +media($tablet)
       +span-columns(12)
+
+  &.full
+    max-width: 627px
 
   > section
     + section

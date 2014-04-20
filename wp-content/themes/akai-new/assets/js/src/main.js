@@ -18,4 +18,15 @@
     forceHeight: false
   });
 
+  var menu = document.querySelector('.navigation-bar');
+  var menuToggleButton = document.querySelector('.navigation-bar .js-expand');
+
+  var toggleMenu = function(e) {
+    e.preventDefault();
+    menu.classList.toggle('expanded');
+  };
+
+  menuToggleButton.addEventListener('click', toggleMenu);
+  menuToggleButton.addEventListener('touchend', toggleMenu);
+
  } )( this );
