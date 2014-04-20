@@ -9,15 +9,24 @@
  ( function( window, undefined ) {
 	'use strict';
 
-  var s = skrollr.init({
-    constants: {
-      smallheaderthird: 140 / 3,
-      smallheaderhalf: 140 / 2,
-      smallheader: 140
-    },
-    forceHeight: false
-  });
+  // install skrollr
+  var deviceWidth = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+  if (deviceWidth >= 960) {
+    document.write('<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.22/skrollr.js"></script>');
+    document.write('<script type="text/javascript" src="//cdn.jsdelivr.net/skrollr.stylesheets/0.0.4/skrollr.stylesheets.min.js"></script>');
+    document.addEventListener('DOMContentLoaded', function(){
+      var s = skrollr.init({
+        constants: {
+          smallheaderthird: 140 / 3,
+          smallheaderhalf: 140 / 2,
+          smallheader: 140
+        },
+        forceHeight: false
+      });
+    });
+  }
 
+  // responsive menu btn
   var menu = document.querySelector('.navigation-bar');
   var menuToggleButton = document.querySelector('.navigation-bar .js-expand');
 

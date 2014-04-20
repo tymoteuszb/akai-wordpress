@@ -808,7 +808,8 @@ dl {
       margin: 15px 0; }
     .site-header .site-header-links .social-buttons {
       margin: 15px 0;
-      font-size: 13px; }
+      font-size: 13px;
+      line-height: 2; }
       .site-header .site-header-links .social-buttons a {
         margin: 0 10px; }
         .site-header .site-header-links .social-buttons a:hover {
