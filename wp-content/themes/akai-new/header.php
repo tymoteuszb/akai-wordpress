@@ -8,8 +8,8 @@
   <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
   <link rel="alternate" type="application/rss+xml" title="AKAI - Wydarzenia" href="<?= esc_attr_e(RSS_LINK); ?>" />
 
-  <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/assets/css/main.css">
-  <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/assets/css/skrollr.css" media="screen and (min-width:960px)" data-skrollr-stylesheet>
+  <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/assets/css/main.css?ver=<?= AKAI_VERSION ?>">
+  <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/assets/css/skrollr.css?ver=<?= AKAI_VERSION ?>" media="screen and (min-width:960px)" data-skrollr-stylesheet>
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 
   <link rel="shortcut icon" href="<?php bloginfo('template_directory'); ?>/images/logo.png" />
@@ -32,10 +32,6 @@
       </div>
 
       <div class="container">
-        <div class="navigation center">
-          <i class="fill"></i>
-        </div>
-
         <?php
         wp_nav_menu(array(
           'theme_location' => 'primary_left',

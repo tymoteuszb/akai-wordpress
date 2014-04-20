@@ -660,7 +660,8 @@ dl {
       background-color: #00263d;
       font-size: 16px;
       background-color: transparent;
-      overflow: hidden; }
+      overflow: hidden;
+      background-color: rgba(255, 255, 255, 0.8); }
       .site-header .navigation-bar a {
         color: inherit; }
       .site-header .navigation-bar .bg {
@@ -700,17 +701,6 @@ dl {
               color: inherit; }
         .site-header .navigation-bar .navigation.js-expand {
           display: none; }
-        .site-header .navigation-bar .navigation.center {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%; }
-          .site-header .navigation-bar .navigation.center .fill {
-            display: block;
-            margin: 0 auto;
-            width: 250px;
-            height: 60px;
-            background-color: white; }
         .site-header .navigation-bar .navigation.left {
           text-align: right;
           float: left;
@@ -1182,8 +1172,7 @@ img[class^="wp-image-"], img[class*=" wp-image-"] {
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
-        padding-right: 5em;
-        font-weight: bold; }
+        padding-right: 5em; }
       .events-container .post .caption time {
         position: absolute;
         right: 1.618em;
