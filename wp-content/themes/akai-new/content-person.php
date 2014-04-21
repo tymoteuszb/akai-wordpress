@@ -51,7 +51,6 @@
         });
         ?>
       </div>
-      <div class="entry-phone"><?php the_field('phone'); ?></div>
     </figcaption>
   </figure>
 </article>
