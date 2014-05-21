@@ -20,7 +20,11 @@ function akai_add_to_calendar_url($duration = 5400) {
 
   // Stupid hack to fix time set on Google Calendar.
   // Even if you pass the 18:30 time to Google and a timezone, it will convert the time to its current timezone anyway (thus, making 20:30 from it, if we're in Warsaw (2 hours between UTC and Europe/Warsaw))
-  $start_timestamp -= 2 * 60 * 60;
+  $hours_offset = 2;
+  if (date_i18n('I')) {
+    $hours_offset -= 1;
+  }
+  $start_timestamp -= $hours_offset * 60 * 60;
 
   $end_timestamp = $start_timestamp + $duration;
 
