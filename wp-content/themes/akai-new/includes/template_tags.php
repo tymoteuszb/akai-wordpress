@@ -2,8 +2,8 @@
 
 /**
  * prints Google Add to calendar link
+ * more info: http://stackoverflow.com/questions/10488831/link-to-add-to-google-calendar
  * @param int $duration in seconds
- *
  * 
  * @todo czy to ma byc link Add to calendar, czy moze jakis obiekt, ktory mozna dodawac takze do innych kalendarzy?
  *   np. plik .iCal 
@@ -17,15 +17,25 @@ function akai_add_to_calendar_url($duration = 5400) {
   if (!$start_timestamp) {
     return;
   }
+
+  // Stupid hack to fix time set on Google Calendar.
+  // Even if you pass the 18:30 time to Google and a timezone, it will convert the time to its current timezone anyway (thus, making 20:30 from it, if we're in Warsaw (2 hours between UTC and Europe/Warsaw))
+  $start_timestamp -= 2 * 60 * 60;
+
   $end_timestamp = $start_timestamp + $duration;
 
   $params = [
     'text' => get_the_title(),
-    'dates' => gmdate('Ymd\THis\Z', $start_timestamp) . '/' . gmdate('Ymd\THis\Z', $end_timestamp),
+    'dates' => date_i18n('Ymd\THis\Z', $start_timestamp) . '/' . date_i18n('Ymd\THis\Z', $end_timestamp),
     'details' => "Opis wydarzenia: " . get_permalink(),
     'location' => get_field('location') ? get_field('location')['address'] : null,
+    // 'ctz' => date_i18n('e') # timezone
+    'ctz' => "Europe/Warsaw"
     // 'sprop' => get_permalink()
   ];
+
+  // var_dump($params);
+  // die();
 
   $url_params = '';
   foreach ($params as $key => $value) {

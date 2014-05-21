@@ -18,12 +18,12 @@
       </a>
     <?php endif ?>
 
-    <?php /*if (get_field('event_date')): ?>
+    <?php if (get_field('event_date')): ?>
       <a href="<?php esc_attr_e(akai_add_to_calendar_url()); ?>" class="btn btn-blue">
         <i class="fa fa-google-plus-square"></i>
         Dodaj do kalendarza
       </a>
-    <?php endif */?>
+    <?php endif ?>
 
     <?php get_ssb(); ?>
   </header>
