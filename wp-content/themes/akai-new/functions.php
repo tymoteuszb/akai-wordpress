@@ -170,7 +170,8 @@ function akai_migrate_old_thumbnails()
   return $thumbnails;
 }
 
-// [stars value="5"]
+// Stars tag, which shows f.e. 3.5 of 5 filled in stars (f.e. event's rating).
+// [stars value="3.5"]
 function stars_func($attributes) {
     $options = shortcode_atts( array(
         'value' => 0,
@@ -179,17 +180,17 @@ function stars_func($attributes) {
 
     $content = "";
 
-    for ($i = 0; $i < $options['value']; $i++) { 
-      $content += '<i class="fa fa-star"></i>';
+    for ($i = 0; $i < floor($options['value']); $i++) { 
+      $content .= '<i class="fa fa-star"></i>';
     }
 
     // missing half of star?
-    if ((int) $i != (float) $i) {
-      $content += '<i class="fa fa-star-half"></i>';
+    if ((int) $options['value'] != (float) $options['value']) {
+      $content .= '<i class="fa fa-star-half-o"></i>';
     }
 
     for ($i = ceil($options['value']); $i < $options['limit']; $i++) { 
-      $content += '<i class="fa fa-star-o"></i>';
+      $content .= '<i class="fa fa-star-o"></i>';
     }
 
     return $content;
