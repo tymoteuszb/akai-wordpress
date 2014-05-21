@@ -19,7 +19,7 @@
     <?php endif ?>
 
     <?php if (get_field('event_date')): ?>
-      <a href="<?php esc_attr_e(akai_add_to_calendar_url()); ?>" class="btn btn-blue">
+      <a href="<?php esc_attr_e(akai_add_to_calendar_url()); ?>" class="btn btn-blue" target="_blank">
         <i class="fa fa-google-plus-square"></i>
         Dodaj do kalendarza
       </a>
