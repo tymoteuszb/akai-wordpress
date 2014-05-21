@@ -169,3 +169,29 @@ function akai_migrate_old_thumbnails()
 
   return $thumbnails;
 }
+
+// [stars value="5"]
+function stars_func($attributes) {
+    $options = shortcode_atts( array(
+        'value' => 0,
+        'limit' => 5,
+    ), $attributes );
+
+    $content = "";
+
+    for ($i = 0; $i < $options['value']; $i++) { 
+      $content += '<i class="fa fa-star"></i>';
+    }
+
+    // missing half of star?
+    if ((int) $i != (float) $i) {
+      $content += '<i class="fa fa-star-half"></i>';
+    }
+
+    for ($i = ceil($options['value']); $i < $options['limit']; $i++) { 
+      $content += '<i class="fa fa-star-o"></i>';
+    }
+
+    return $content;
+}
+add_shortcode( 'stars', 'stars_func' );
