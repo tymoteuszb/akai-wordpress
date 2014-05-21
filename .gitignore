@@ -38,3 +38,4 @@ wp-content/upgrade/
 wp-content/wp-cache-config.php
 Movefile
 wp-content/*.sql
+.htaccess

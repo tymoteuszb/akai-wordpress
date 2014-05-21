@@ -24,6 +24,7 @@ wordmove pull -e staging # not necessary. You need to have Movefile configured (
 
 cp local-config.sample.php local-config.php
 vi local-config.php # configure database access
+# do the same also with .htaccess.sample (rename it to .htaccess)
 
 # now, see if wordpress is running up correctly
 
